@@ -1,0 +1,56 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Autor 2025]{Vrs:2025}
+\abntrefinfo{Autor}{AUTOR}{2025}
+{AUTOR, N. do. \textbf{Título do Livro}. [S.l.]: Editora, 2025.}
+
+\bibitem[CGI.br 2024]{cgi2024}
+\abntrefinfo{CGI.br}{CGI.BR}{2024}
+{CGI.BR, C.~G. da~Internet~no B. \textbf{Pesquisa sobre o uso das tecnologias
+  de informação e comunicação nos domicílios brasileiros: TIC Domicílios
+  2023}. São Paulo: CGI.br, 2024.
+Dispon{\'\i}vel em:
+  \url{https://cgi.br/media/docs/publicacoes/2/20241104102822/tic\_domicilios\_2023\_livro\_eletronico.pdf}.}
+
+\bibitem[Co-operation e (OECD) 2019]{oecd2019}
+\abntrefinfo{Co-operation e (OECD)}{CO-OPERATION; (OECD)}{2019}
+{CO-OPERATION, O. for E.; (OECD), D. \textbf{Global Material Resources Outlook
+  to 2060: Economic Drivers and Environmental Consequences}. Paris: OECD
+  Publishing, 2019.}
+
+\bibitem[Fielding 2000]{fielding2000}
+\abntrefinfo{Fielding}{FIELDING}{2000}
+{FIELDING, R.~T.
+\textbf{Architectural Styles and the Design of Network-based Software
+  Architectures}.
+Tese (Doutorado) --- University of California, Irvine, 2000.}
+
+\bibitem[Forti et al. 2024]{forti2024}
+\abntrefinfo{Forti et al.}{FORTI et al.}{2024}
+{FORTI, V. et al. \textbf{Global E-waste Monitor 2024: Electronic Waste Rising
+  Five Times Faster Than Documented E-waste Recycling}. Geneva: UNITAR, 2024.
+Dispon{\'\i}vel em: \url{https://ewastemonitor.info/}.}
+
+\bibitem[Foundation 2023]{ellen2023}
+\abntrefinfo{Foundation}{FOUNDATION}{2023}
+{FOUNDATION, E.~M. \textbf{What is a circular economy?} 2023.
+Dispon{\'\i}vel em:
+  \url{https://www.ellenmacarthurfoundation.org/pt/temas/economia-circular-introducao/visao-geral}.}
+
+\bibitem[Perkins et al. 2014]{perkins2014}
+\abntrefinfo{Perkins et al.}{PERKINS et al.}{2014}
+{PERKINS, D.~N. et al. E-waste: a global hazard.
+\textbf{Annals of Global Health}, v.~80, n.~4, p. 286--295, 2014.}
+
+\bibitem[UNIFESO 2025]{unifeso2025}
+\abntrefinfo{UNIFESO}{UNIFESO}{2025}
+{UNIFESO, C. U.~S. dos~Órgãos. \textbf{Informações Institucionais e Dados
+  Acadêmicos}. 2025.
+Dispon{\'\i}vel em: \url{https://www.unifeso.edu.br}.}
+
+\end{thebibliography}

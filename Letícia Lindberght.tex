@@ -1,0 +1,539 @@
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			% para impressão em frente e verso. Oposto a oneside
+	a4paper,			% tamanho do papel.
+	% -- opções da classe abntex2 --
+	% As opções chapter=TITLE, section=TITLE etc. foram removidas para corrigir erros de compilação
+	% com o pacote hyperref (Token not allowed in a PDF string). O abntex2 já formata o sumário
+	% em maiúsculas por padrão.
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	brazil				% o último idioma é o principal do documento
+	]{abntex2}
+
+
+% ---r
+% Pacotes básicos
+% ---
+%\usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage{mathptmx}			% Usa a fonte Times New Roman
+%\usepackage{helvet}			% Fonte Parecida com Arial
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}			% Indenta o primeiro parágrafo de cada seção.
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{subcaption}			% Inclusão de gráficos lado a lado
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{tabularx,ragged2e}	% Para inserir tabelas
+\usepackage{multirow}			% Para mesclar células
+\usepackage[dvipsnames,table,xcdraw]{xcolor}		% Permite adicionar cores nas linhas de tabelas. Carregado no lugar do pacote 'color' por ser mais completo.
+\usepackage{fancyvrb}			% Permite adicionar arquivos de texto
+\usepackage[portuguese, ruled, linesnumbered]{algorithm2e} % Uso de algoritmos
+\usepackage{amsfonts}			% Permite usar notação de conjuntos
+\usepackage{amsmath}			% Permite citar equações
+\usepackage{amsthm}				% Permite criar teoremas e experimentos
+\usepackage[font={bf, small}, labelsep=endash, labelfont=bf]{caption}	% Faz legenda de figuras ficarem em negrito
+\usepackage{cancel}				% Permite fazer expressão tendendo a zero
+\usepackage{epstopdf}			% Converte eps para pdf
+\usepackage[final]{pdfpages}
+\usepackage{hyphenat}
+% \usepackage{fancyhdr} % -- COMENTADO: O pacote fancyhdr não é recomendado com a classe memoir, que possui suas próprias ferramentas de customização.
+\usepackage{enumitem}
+
+\newcolumntype{L}{>{\RaggedRight\arraybackslash}X}
+% ---
+		
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+\usepackage{lipsum}				% para geração de dummy text
+% ---
+
+% ---
+% Pacotes de citações
+% ---
+%\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf, abnt-emphasize=bf]{abntex2cite}	% Citações padrão ABNT
+
+% ---
+% Customizações para o layout da UFPA
+% ---
+\usepackage{modelo-ufpa/ufpa}
+
+% --- Bloco de comandos para justificação removido ---
+% Os comandos \tolerance, \hyphenpenalty, \sloppy etc. foram removidos.
+% O pacote 'microtype' já está carregado e oferece uma solução tipograficamente
+% superior para problemas de justificação (hifenação e espaçamento).
+% ---
+
+\renewcommand{\ABNTEXchapterfontsize}{\normalsize}
+\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXsectionfont}{}
+\renewcommand{\ABNTEXsubsectionfont}{}
+
+\renewcommand{\chaptername}{ }
+%\renewcommand{\familydefault}{\sfdefault} % usar apenas se usar a fonte helvet
+
+% Muda o título de lista de ilustrações para lista de figuras
+\addto\captionsbrazil{%
+  \renewcommand{\listfigurename}%
+    {Lista de Ilustrações}%
+	\renewcommand{\listtablename}%
+    {Lista de Tabelas}%
+}
+
+% --- Estilo de página customizado usando as ferramentas da classe 'memoir' ---
+% Substituindo a implementação que usava o pacote 'fancyhdr'
+\makepagestyle{ultima}
+\makeoddhead{ultima}{}{}{\thepage}
+\makeevenhead{ultima}{}{}{\thepage} % Garante que funcione em oneside e twoside
+\makeheadrule{ultima}{0pt}{0pt} % Remove a linha do cabeçalho
+\makefootrule{ultima}{0pt}{0pt} % Remove a linha do rodapé
+% ---
+
+% Permite utilizar figuras sem precisar colocar o caminho absoluto
+\graphicspath{{imagens/}}
+
+% Define o ambiente de experimentos
+\theoremstyle{definition}
+\newtheorem{experimento}{Experimento}[section]
+\newcommand{\experimentoautorefname}{Experimento}
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+%\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+%\renewcommand{\backref}{}
+% Define os textos da citação
+%\renewcommand*{\backrefalt}[4]{
+%	\ifcase #1 %
+%		Nenhuma citação no texto.%
+%	\or
+%		Citado na página #2.%
+%	\else
+%		Citado #1 vezes nas páginas #2.%
+%	\fi}%
+% ---
+
+% --- Informações da capa, folha de rosto e ficha catalográfica ---
+\universidade{Centro Universitário Serra dos Órgãos \- UNIFESO}
+\instituto{Direção Acadêmica de Ciências Humanas e Tecnológicas \- DACHT}
+\curso{Curso de Bacharelado em Ciência da Computação}
+\titulo{Orbitar: Uma plataforma web para o reaproveitamento de eletrônicos e promoção da economia circular}
+\autor{Letícia Lindberght da Costa}
+\local{Teresópolis}
+\data{2025}
+\orientador{Prof\. Nome do Orientador}
+\tipotrabalho{Monografia}
+\preambulo{Trabalho de Conclusão de Curso apresentado ao Centro Universitário Serra dos Órgãos como requisito obrigatório para obtenção do título de Bacharel em Ciência da Computação.}
+\sobrenome{Lindberght}
+\nome{Letícia}
+\palavraschave{Palavra-chave1, Palavra-chave2, Palavra-chave3}
+
+\datadadefesa{Data da Defesa: 28 de Novembro de 2025}
+%\conceito{Conceito: Excelente}
+\faculdadedoorientador{Faculdade do Orientador}
+\titulacaodoorientador{MSc}
+\faculdadedocoorientador{Faculdade do Coorientador}
+\titulacaodocoorientador{DSc}
+\primeiromembrodabanca{Nome do Primeiro Membro da Banca}
+\titulacaodoprimeiromembro{DSc}
+\faculdadedoprimeiromembrodabanca{Faculdade do Primeiro Membro da Banca}
+\segundomembrodabanca{Nome do Segundo Membro da Banca}
+\titulacaodosegundomembro{DSc}
+\faculdadedosegundomembrodabanca{Faculdade do Segundo Membro da Banca}
+% ---
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\hypersetup{
+    pdftitle={\texorpdfstring{\imprimirtitulo}{Orbitar \- Plataforma Web de Reaproveitamento de Eletrônicos}}, 
+    pdfauthor={\texorpdfstring{\imprimirautor}{Letícia Lindberght da Costa}},
+    pdfsubject={\texorpdfstring{\imprimirpreambulo}{Trabalho de Conclusão de Curso}},
+    pdfkeywords={\texorpdfstring{\imprimirpalavraschave}{Palavra-chave1, Palavra-chave2, Palavra-chave3}},
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    filecolor=magenta,
+    urlcolor=black,
+    bookmarksdepth=4,
+    breaklinks=true
+}
+% --- 
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.5cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm} % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% AVISO: O comando \nocite abaixo irá gerar um erro de "Citation undefined" se a chave 'Vrs:2025'
+% não existir no seu arquivo bibliografia.bib. Certifique-se de que ela está lá.
+\nocite{Vrs:2025}
+% Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage{brazil}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+% ---
+% Capa
+% ---
+\imprimircapa{}
+% ---
+
+% ---
+% Folha de rosto
+% ---
+\imprimirfolhaderosto{}
+% ---
+
+% ---
+% Inserir a ficha bibliografica
+% ---
+% A biblioteca da universidade lhe fornecerá um PDF
+% com a ficha catalográfica definitiva após a defesa do trabalho. Quando estiver
+% com o documento, salve-o como PDF no diretório do seu projeto e substitua todo
+% o conteúdo de implementação deste arquivo pelo comando abaixo:
+
+%\begin{fichacatalografica}
+%    \includepdf{fichacatalografica.pdf}
+%\end{fichacatalografica}
+
+\newpage
+% ---
+% ---
+
+% ---
+% Inserir folha de aprovação
+% ---
+%
+\begin{folhadeaprovacao}
+\imprimirfolhadeaprovacao{}
+\end{folhadeaprovacao}
+% ---
+
+% ---
+% Dedicatória
+% ---
+
+% ESCREVA A SUA DEDICATORIA A DEDICATORIA QUE SE ENCONTRA NO ARQUIVO E APENAS UM EXEMPLO. ESCOLHA A DEDICATORIA QUE MAIS LHE AGRADAR. LEMBRE-SE DE UTILIZAR AS '\\' PARA PULAR LINHAS
+
+\begin{dedicatoria}
+    \vspace*{\fill}
+    \flushright{}
+    %\noindent
+    \textit{Este trabalho é dedicado às crianças adultas que,
+	quando pequenas, sonharam em se tornar cientistas.
+	\- Lauro César em abnTeX2}
+\end{dedicatoria}
+% ---
+
+% ---
+% Agradecimentos
+% ---
+\begin{agradecimentos}
+
+Escreva aqui o seus agradecimentos da maneira que melhor lhe convêm.
+
+\end{agradecimentos}
+% ---
+
+% ---
+% Epígrafe
+% ---
+
+% ESCREVA A SUA EPÍGRAFE A MESMA QUE SE ENCONTRA NO ARQUIVO E APENAS UM EXEMPLO. ESCOLHA A EPÍGRAFE QUE MAIS LHE AGRADAR. LEMBRE-SE DE UTILIZAR AS '\\' PARA PULAR LINHAS
+
+\begin{epigrafe}
+    \vspace*{\fill}
+	\begin{flushright}
+		\textit{``Que todos os nossos esforços estejam sempre focados no desafio à impossibilidade.\\ Todas as grandes conquistas humanas vieram daquilo que parecia impossível\.''\\
+		(Charles Chaplin)}
+	\end{flushright}
+\end{epigrafe}
+% ---
+
+% ---
+% RESUMOS
+% ---
+
+% ---
+% inserir lista de ilustrações
+% ---
+% UTILIZE CASO HAJA FIGURAS NA MONOGRAFIAS. EM QUASO DE AUSENCIA DE FIGURAS COMENTAR COM AS 3 LINHAS DE CODIGOS UTILIZANDO O '%'.
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage{}
+% ---
+
+% ---
+% inserir lista de quadros
+% ---
+% UTILIZE CASO HAJA QUADROS NA MONOGRAFIAS. EM QUASO DE AUSENCIA DE QUADROS COMENTAR COM AS 3 LINHAS DE CODIGOS UTILIZANDO O '%'.
+\pdfbookmark[0]{\listofquadrosname}{loq}
+\listofquadros*
+\cleardoublepage{}
+% ---
+
+% ---
+% inserir lista de tabelas
+% ---
+% UTILIZE QUASE HAJA TABELAS NA MONOGRAFIAS. EM QUASO DE AUSENCIA DE TABELAS COMENTAR COM AS 3 LINHAS DE CODIGOS UTILIZANDO O '%'.
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage{}
+% ---
+
+% ---
+% inserir lista de algoritmos
+% ---
+% UTILIZE CASO HAJA ALGORITMOS NA MONOGRAFIAS. EM QUASO DE AUSENCIA DE ALGORITMOS COMENTAR COM AS 3 LINHAS DE CODIGOS UTILIZANDO O '%'.
+\pdfbookmark[0]{\listalgorithmcfname}{loa}
+\imprimirlistadealgoritmos{}
+\cleardoublepage{}
+% ---
+
+% ---
+% inserir lista de abreviaturas e siglas
+% ---
+% DEVE SER PREENCHIDA A MÃO LEMBRE-SE DE MANTER EM ORDEM ALFABETICA.
+\begin{siglas}
+  \item[ABNT] Associação Brasileira de Normas Técnicas
+\end{siglas}
+% ---
+
+% ---
+% inserir lista de símbolos
+% ---
+% DEVE SER PREENCHIDA A MÃO LEMBRE-SE DE MANTER EM ORDEM ALFABETICA.
+%\begin{simbolos}
+%\item[\(\Theta\)] Letra grega maiúscula theta
+%\end{simbolos}
+
+% ---
+
+% resumo em português
+\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+\begin{resumo}
+Escreva aqui o resumo do seu trabalho. Lembre-se escreva o resumo por ultimo na monografia. 
+
+\textbf{Palavras-chave}: \imprimirpalavraschave{}
+\end{resumo}
+
+% resumo em inglês
+\begin{resumo}[Abstract]
+ \begin{otherlanguage*}{english}
+   Escreva aqui o seu abstract (Resumo em inglês)
+
+   \vspace{\onelineskip}
+
+   \noindent 
+   \textbf{Keywords}: Keywords1. Keywords2. Keywords3.
+ \end{otherlanguage*}
+\end{resumo}
+
+% ---
+% inserir o sumario
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage{}
+% ---
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual{}
+\pagestyle{simple}
+
+% ----------------------------------------------------------
+% Introdução
+% ----------------------------------------------------------
+\chapter[INTRODUÇÃO]{INTRODUÇÃO}
+
+As Tecnologias da Informação e Comunicação \(TIC\) são pilares da sociedade contemporânea, catalisando o progresso social e econômico. Contudo, o modelo de produção que as sustenta, predominantemente linear e focado no consumo cíclico, gerou um passivo ambiental de proporções críticas: o lixo eletrônico, ou e-waste. Este fenômeno é o resultado direto de um sistema caracterizado pela obsolescência programada e por padrões de consumo insustentáveis, onde equipamentos são descartados em um ritmo alarmante, muitas vezes ainda em plenas condições de uso.
+
+A magnitude deste problema é documentada por múltiplas fontes globais. O relatório \textit{Global E-waste Monitor 2024} revela que a geração de lixo eletrônico atingiu um recorde histórico, crescendo a uma taxa cinco vezes superior à da reciclagem documentada, com dezenas de milhões de toneladas descartadas anualmente~\cite{forti2024}. Para além do volume, a periculosidade desses resíduos é um fator crítico. Um estudo aprofundado sobre sua composição detalha a presença de numerosas substâncias tóxicas, como chumbo, mercúrio e cádmio, que, quando descartadas incorretamente, representam uma séria ameaça à saúde humana e aos ecossistemas~\cite{perkins2014}.
+
+Este cenário reflete um desafio sistêmico maior. Segundo a Organização para a Cooperação e Desenvolvimento Econômico \(OCDE\), os atuais padrões de extração e uso de materiais são insustentáveis, e o setor de eletrônicos é um dos principais contribuintes para o esgotamento de recursos naturais finitos~\cite{oecd2019}. Portanto, tratar o problema do e-waste é uma dupla necessidade: por um lado, mitigar a contaminação ambiental e, por outro, romper com um modelo econômico extrativista e desperdiçador. A solução mais eficaz, alinhada aos princípios da economia circular, é intervir antes que um equipamento se torne resíduo.
+
+Neste contexto, a reutilização emerge como a estratégia prioritária, pois conserva a energia e os materiais embutidos na fabricação do produto, estendendo sua vida útil ao máximo. É a partir desta premissa que este trabalho se desenvolve, propondo uma solução tecnológica para um problema gerado pela própria tecnologia. O objetivo é criar uma ferramenta que não apenas ofereça um destino adequado para eletrônicos subutilizados, mas que também transforme um passivo ambiental em um ativo social, promovendo, como um valioso benefício secundário, a inclusão digital.
+
+\section[MOTIVAÇÃO]{MOTIVAÇÃO}
+
+A motivação central deste projeto nasce da constatação de uma grande falha logística e cultural no ciclo de vida dos produtos eletrônicos. Para um cidadão ou uma empresa que substitui um equipamento funcional, o processo de descarte sustentável é frequentemente opaco, inconveniente e desestruturado. Na ausência de canais claros e confiáveis para a doação ou o reaproveitamento, a opção mais fácil acaba sendo o descarte inadequado, que alimenta o crescente volume de e-waste.
+
+Por outro lado, existe uma demanda latente por esses mesmos dispositivos. A tecnologia pode, ironicamente, resolver um problema que ela mesma ajudou a criar. A proposta é desenvolver a \textbf{Orbitar}, uma aplicação web que atue como uma ponte digital, conectando quem deseja descartar um eletrônico de forma consciente com quem pode dar a ele uma nova vida, tornando o processo de reutilização simples, seguro e geograficamente acessível.
+
+\section[JUSTIFICATIVA]{JUSTIFICATIVA}
+
+A relevância deste trabalho se justifica primariamente sob a ótica ambiental, pela necessidade urgente de se contrapor ao modelo de consumo linear. A importância de tratar o e-waste reside em seu duplo impacto negativo: primeiro, a contaminação ambiental e os riscos à saúde pública causados por seus componentes tóxicos, conforme detalhado por~\citeonline{perkins2014}; segundo, o esgotamento de recursos naturais finitos, desperdiçados no descarte prematuro de equipamentos. A plataforma \textbf{Orbitar} alinha-se diretamente aos princípios da economia circular~\cite{ellen2023}, promovendo a estratégia mais nobre e eficiente de gestão de resíduos: a reutilização. Ao estender a vida útil de um produto, evitam-se os impactos de todo o ciclo de produção de um novo e do descarte de um antigo.
+
+Como um benefício social derivado, ao intervir no ciclo de descarte, a plataforma gera um impacto secundário de grande relevância, abordando a persistente desigualdade digital no Brasil. Dados da pesquisa TIC Domicílios~\cite{cgi2024} mostram que a posse de um computador ainda é um forte indicador de oportunidade socioeconômica. Portanto, a proposta se justifica por criar um mecanismo que ataca a raiz do problema do descarte inadequado e, como consequência, transforma um passivo ambiental em um ativo para a inclusão social.
+
+\section[OBJETIVOS]{OBJETIVOS}
+
+Diante do cenário exposto, os objetivos deste trabalho são definidos a seguir.
+
+% --- CORREÇÃO DE ESTRUTURA: Títulos das subseções corrigidos para maior clareza ---
+\subsection[OBJETIVO GERAL]{OBJETIVO GERAL}
+
+Desenvolver a Orbitar, uma aplicação web focada em promover a economia circular e a sustentabilidade, que conecte doadores e receptores de produtos eletrônicos de forma organizada, segura e localizada, a fim de mitigar o descarte inadequado de e-waste e estender a vida útil da tecnologia.
+
+\subsection[OBJETIVOS ESPECÍFICOS]{OBJETIVOS ESPECÍFICOS}
+
+\begin{enumerate}[label={\alph*}]
+    \item Realizar um levantamento conceitual sobre a gestão de e-waste e os princípios da economia circular, e analisar as tecnologias de desenvolvimento web a serem utilizadas (C\#\, .NET, Angular e SQL Server);
+    \item Modelar a arquitetura da solução, incluindo o projeto do banco de dados relacional e a definição das interfaces de comunicação via API REST;
+    \item Desenvolver o back-end da aplicação em C\# com a plataforma .NET, implementando as regras de negócio, o sistema de autenticação e o gerenciamento de dados;
+    \item Desenvolver o front-end da aplicação com Angular, construindo uma interface de usuário responsiva, intuitiva e acessível;
+    \item Implementar e validar o fluxo completo de doação, desde o cadastro e filtragem por localidade até a reserva temporária do item e a confirmação de entrega.
+\end{enumerate}
+
+\section[ORGANIZAÇÃO DO TRABALHO]{ORGANIZAÇÃO DO TRABALHO}
+
+O restante deste trabalho está organizado da seguinte forma: o Capítulo 2 apresenta a fundamentação teórica, abordando os conceitos de e-waste, economia circular e as tecnologias que servem de base para o projeto. O Capítulo 3 descreve detalhadamente a metodologia empregada, incluindo a arquitetura do sistema, o modelo de dados e as ferramentas utilizadas no desenvolvimento. No Capítulo 4, são apresentados os resultados, com a demonstração das funcionalidades da plataforma. Finalmente, o Capítulo 5 traz as considerações finais, discutindo as conclusões do estudo, as limitações encontradas e as sugestões para trabalhos futuros.
+
+\chapter[FUNDAMENTAÇÃO TEÓRICA]{FUNDAMENTAÇÃO TEÓRICA}
+
+Este capítulo apresenta as bases conceituais e tecnológicas que sustentam o desenvolvimento da plataforma Orbitar. A exposição parte do fenômeno ambiental que motiva o projeto, avança para a discussão sobre arquiteturas de software e, por fim, detalha as tecnologias específicas empregadas na sua implementação.
+
+\section[O DESAFIO DO LIXO ELETRÔNICO E A ECONOMIA CIRCULAR]{O DESAFIO DO LIXO ELETRÔNICO E A ECONOMIA CIRCULAR}
+
+A proposta de valor do projeto reside na aplicação de princípios de sustentabilidade para resolver um problema gerado pelo próprio ciclo de consumo tecnológico. Resíduos de Equipamentos Elétricos e Eletrônicos \(REEE\), ou e-waste, compreendem todos os produtos eletrônicos ao final de sua vida útil. Este problema é definido tanto por sua escala massiva quanto por sua natureza perigosa.
+
+Primeiramente, a escala do problema é evidenciada pelos dados do \textit{Global E-waste Monitor 2024}. O relatório indica que o mundo gerou 62 milhões de toneladas de lixo eletrônico em um único ano, um aumento de 82\% desde 2010, enquanto menos de um quarto \(22,3\%\) desse volume foi formalmente coletado e reciclado~\cite{forti2024}. Essa disparidade demonstra a ineficácia dos sistemas atuais de gestão de resíduos e a urgência de novas abordagens.
+
+Em segundo lugar, a periculosidade do e-waste define sua gravidade. Conforme detalhado por~\citeonline{perkins2014}, os componentes eletrônicos contêm uma mistura complexa de materiais valiosos e substâncias perigosas. Elementos como chumbo em soldas, mercúrio em telas de LCD e cádmio em baterias recarregáveis são neurotoxinas e carcinógenos conhecidos. O descarte inadequado desses materiais em lixões ou sua queima a céu aberto liberam essas toxinas no ar, solo e água, resultando em contaminação ambiental duradoura e graves riscos à saúde das comunidades próximas.
+
+A importância de tratar o problema do e-waste é reforçada pela estrutura da economia circular, que oferece um caminho viável para a sustentabilidade. Em oposição ao modelo linear de ``extrair-produzir-descartar'', a economia circular propõe um sistema restaurador e regenerativo por design. O objetivo é manter produtos, componentes e materiais em seu mais alto nível de utilidade e valor o tempo todo~\cite{ellen2023}. Dentro de seus princípios, a reutilização se destaca como uma das estratégias mais eficientes, pois demanda menos energia e recursos do que a reciclagem. A plataforma \textbf{Orbitar} foi concebida como uma ferramenta para operacionalizar esse princípio, criando um mercado secundário local e acessível que intercepta dispositivos antes que se tornem lixo, reinserindo-os no sistema produtivo e social.
+
+\section[ARQUITETURA DE APLICAÇÕES WEB MODERNAS]{ARQUITETURA DE APLICAÇÕES WEB MODERNAS}
+
+A solução foi concebida como uma aplicação web moderna, projetada para ser escalável, resiliente e acessível.
+
+A arquitetura base é a cliente-servidor, um paradigma que separa as responsabilidades da aplicação. O cliente \(front-end\), executado no navegador do usuário, é responsável pela camada de apresentação e interação. O servidor (back-end) concentra a lógica de negócio, o acesso aos dados e as regras de segurança. Essa separação (desacoplamento) é fundamental, pois permite que as equipes de desenvolvimento do front-end e do back-end trabalhem de forma independente, além de viabilizar que diferentes tipos de clientes (como um futuro aplicativo móvel) consumam os mesmos serviços do servidor.
+
+A comunicação entre cliente e servidor é mediada por uma Interface de Programação de Aplicações \(API\). Foi adotado o padrão arquitetural REST (Representational State Transfer), definido na dissertação seminal de Roy Fielding~\cite{fielding2000}. Uma API RESTful organiza a comunicação em torno de recursos (ex: doadores, doações, dispositivos), que são manipulados através dos verbos padrão do protocolo HTTP (GET, POST, PUT, DELETE). Uma característica chave do REST é ser stateless (sem estado), o que significa que cada requisição do cliente para o servidor deve conter toda a informação necessária para ser processada, garantindo escalabilidade e confiabilidade. Os dados são majoritariamente trafegados no formato JSON (JavaScript Object Notation) devido à sua leveza e fácil interpretação por linguagens de programação.
+
+\section[TECNOLOGIAS ADOTADAS NO PROJETO]{TECNOLOGIAS ADOTADAS NO PROJETO}
+
+A seleção tecnológica para a plataforma Orbitar foi orientada pela robustez, escalabilidade e pela forte integração do ecossistema de ferramentas escolhido.
+
+Para o desenvolvimento do back-end, a escolha foi a linguagem C\# em conjunto com a plataforma .NET. Mantida pela Microsoft, a .NET é um framework de desenvolvimento de código aberto, multiplataforma e de alto desempenho, ideal para a construção de aplicações web e APIs robustas. Sua arquitetura moderna, forte tipagem e vasto conjunto de bibliotecas permitem a criação de sistemas seguros e escaláveis, enquanto o framework ASP.NET Core simplifica drasticamente a construção de APIs RESTful, permitindo que o desenvolvedor se concentre nas regras de negócio da aplicação.
+
+A interface com o usuário \(front-end\) foi construída com Angular, um framework mantido pelo Google para o desenvolvimento de Single-Page Applications \(SPAs\). O Angular utiliza TypeScript, um superset do JavaScript que adiciona tipagem estática ao código, resultando em um desenvolvimento mais seguro e de fácil manutenção. Sua arquitetura baseada em componentes permite a criação de uma interface modular e reutilizável, o que é ideal para a complexidade e a evolução planejada para a plataforma.
+
+Para a persistência dos dados, optou-se pelo Microsoft SQL Server, um Sistema de Gerenciamento de Banco de Dados \(SGBD\) relacional altamente robusto e confiável. Sua forte integração com o ecossistema .NET, por meio de ferramentas como o Entity Framework, otimiza o desenvolvimento da camada de acesso a dados. O SQL Server é reconhecido por sua performance e por garantir a integridade e consistência das informações através de transações ACID (Atomicidade, Consistência, Isolamento e Durabilidade), um requisito crucial para uma aplicação que gerencia o ciclo de vida de doações, onde cada etapa deve ser registrada de forma segura.
+
+\begin{figure}[!h]
+\centering
+\caption{Escreva aqui o titulo da sua figura}
+\includegraphics[scale=0.5]{UNIFESO.png} %coloque suas figuras na pasta imagem e mude o nome do aqui nessa parte. utilize o comando scale para alterar a escala da imagem
+% AVISO: A compilação irá falhar se a chave de citação 'unifeso2025' não existir
+% no seu arquivo bibliografia.bib.
+\legend{Fonte:~\citeauthoronline{unifeso2025},~\citeyear{unifeso2025}}
+\label{unifeso}% a escreva o nome qualquer a sua figura. Esse nome sera usado para referenciar a figura com o comando \ref{unifeso}
+\end{figure}
+
+Utilize o comando~\ref{unifeso} para referenciar as suas Figuras.
+exemplo: Figura~\ref{unifeso}.
+
+\chapter[METODOLOGIA E DESENVOLVIMENTO]{METODOLOGIA E DESENVOLVIMENTO}
+
+Escreva aqui a metodologia adotada no seu trabalho
+
+% ----------------------------------------------------------
+% Considerações Finais
+% ----------------------------------------------------------
+\chapter{Conclusão}
+
+Escreva a sua conclusão do seu trabalho
+
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual{}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliographystyle{abntex2-alf} % Define o estilo ABNT alfabético
+\bibliography{bibliografia}  
+
+
+% ----------------------------------------------------------
+% Apêndices
+% ----------------------------------------------------------
+
+% ---
+% Inicia os apêndices
+% ---
+\begin{apendicesenv}
+	
+% Imprime uma página indicando o início dos apêndices
+\partapendices{}
+	
+\chapter{Exemplo}
+% ----------------------------------------------------------
+	
+\end{apendicesenv}
+% ---
+
+% ----------------------------------------------------------
+% Anexos
+% ----------------------------------------------------------
+
+% ---
+% Inicia os anexos
+% ---
+\begin{anexosenv}
+	
+	% Imprime uma página indicando o início dos anexos
+	\partanexos{}
+	% ---
+    \chapter{Exemplo}
+    % ---
+	
+\end{anexosenv}
+
+\end{document}
