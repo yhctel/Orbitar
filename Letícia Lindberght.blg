@@ -16,6 +16,9 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
 Database file #1: abntex2-options.bib
 Database file #2: bibliografia.bib
+Warning--I didn't find a database entry for "abnt-show-options=doi=on"
+Warning--I didn't find a database entry for "url=on"
+Warning--I didn't find a database entry for "abnt-cite-style=authoryear-lowcase"
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'glb_str_end' (item size: 4) to 20 items.
 Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
@@ -25,44 +28,45 @@ Reallocating 'global_strs' (item size: 1) to 4000000 items.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 10 entries,
+You've used 25 entries,
             6714 wiz_defined-function locations,
-            1245 strings with 10678 characters,
-and the built_in function-call counts, 11275 in all, are:
-= -- 1337
-> -- 190
-< -- 246
-+ -- 358
-- -- 59
-* -- 671
-:= -- 1471
-add.period$ -- 28
-call.type$ -- 10
-change.case$ -- 73
-chr.to.int$ -- 12
-cite$ -- 8
-duplicate$ -- 986
-empty$ -- 551
-format.name$ -- 284
-if$ -- 2334
-int.to.chr$ -- 1
+            1357 strings with 14266 characters,
+and the built_in function-call counts, 33813 in all, are:
+= -- 3944
+> -- 606
+< -- 843
++ -- 1085
+- -- 184
+* -- 2091
+:= -- 4232
+add.period$ -- 94
+call.type$ -- 25
+change.case$ -- 229
+chr.to.int$ -- 49
+cite$ -- 23
+duplicate$ -- 3247
+empty$ -- 1401
+format.name$ -- 890
+if$ -- 6817
+int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 160
-newline$ -- 47
-num.names$ -- 40
-pop$ -- 219
+missing$ -- 417
+newline$ -- 133
+num.names$ -- 115
+pop$ -- 517
 preamble$ -- 1
-purify$ -- 35
+purify$ -- 93
 quote$ -- 0
-skip$ -- 1141
+skip$ -- 3439
 stack$ -- 1
-substring$ -- 469
-swap$ -- 351
-text.length$ -- 7
+substring$ -- 1560
+swap$ -- 1194
+text.length$ -- 33
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 2
 warning$ -- 0
-while$ -- 57
+while$ -- 177
 width$ -- 0
-write$ -- 126
+write$ -- 368
+(There were 3 warnings)

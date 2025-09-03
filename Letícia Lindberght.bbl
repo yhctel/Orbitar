@@ -5,52 +5,167 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
-\bibitem[Autor 2025]{Vrs:2025}
-\abntrefinfo{Autor}{AUTOR}{2025}
-{AUTOR, N. do. \textbf{Título do Livro}. [S.l.]: Editora, 2025.}
-
-\bibitem[CGI.br 2024]{cgi2024}
-\abntrefinfo{CGI.br}{CGI.BR}{2024}
-{CGI.BR, C.~G. da~Internet~no B. \textbf{Pesquisa sobre o uso das tecnologias
-  de informação e comunicação nos domicílios brasileiros: TIC Domicílios
-  2023}. São Paulo: CGI.br, 2024.
+\bibitem[{Brasil. Presidência da República} 2010]{Brasil2010}
+\abntrefinfo{{Brasil. Presidência da República}}{{Brasil. Presidência da
+  República}}{2010}
+{{Brasil. Presidência da República}. \textbf{Lei n.º 12.305, de 2 de agosto
+  de 2010. Institui a Política Nacional de Resíduos Sólidos}. 2010.
 Dispon{\'\i}vel em:
+  \url{http://www.planalto.gov.br/ccivil\_03/\_ato2007-2010/2010/lei/l12305.htm}.}
+
+\bibitem[{Centro Universitário Serra dos Órgãos (UNIFESO)}
+  2025]{unifeso2025}
+\abntrefinfo{{Centro Universitário Serra dos Órgãos (UNIFESO)}}{{Centro
+  Universitário Serra dos Órgãos (UNIFESO)}}{2025}
+{{Centro Universitário Serra dos Órgãos (UNIFESO)}. \textbf{Informações
+  institucionais e dados acadêmicos}. 2025.
+Dispon{\'\i}vel em: \url{https://www.unifeso.edu.br}.}
+
+\bibitem[{Comitê Gestor da Internet no Brasil (CGI.br)} 2024]{cgi2024}
+\abntrefinfo{{Comitê Gestor da Internet no Brasil (CGI.br)}}{{Comitê Gestor
+  da Internet no Brasil (CGI.br)}}{2024}
+{{Comitê Gestor da Internet no Brasil (CGI.br)}. \textbf{Pesquisa sobre o uso
+  das tecnologias de informação e comunicação nos domicílios brasileiros:
+  TIC Domicílios 2023}.
+São Paulo, 2024. Dispon{\'\i}vel em:
   \url{https://cgi.br/media/docs/publicacoes/2/20241104102822/tic\_domicilios\_2023\_livro\_eletronico.pdf}.}
 
-\bibitem[Co-operation e (OECD) 2019]{oecd2019}
-\abntrefinfo{Co-operation e (OECD)}{CO-OPERATION; (OECD)}{2019}
-{CO-OPERATION, O. for E.; (OECD), D. \textbf{Global Material Resources Outlook
-  to 2060: Economic Drivers and Environmental Consequences}. Paris: OECD
-  Publishing, 2019.}
+\bibitem[{Ellen MacArthur Foundation} 2013]{EMF2013}
+\abntrefinfo{{Ellen MacArthur Foundation}}{{Ellen MacArthur Foundation}}{2013}
+{{Ellen MacArthur Foundation}. \textbf{Towards the Circular Economy, Vol.1:
+  Economic and business rationale for an accelerated transition}.
+Cowes, UK, 2013. Dispon{\'\i}vel em:
+  \url{https://www.ellenmacarthurfoundation.org/towards-the-circular-economy-vol-1-an-economic-and-business-rationale-for-an}.}
+
+\bibitem[{Ellen MacArthur Foundation} 2023]{ellen2023}
+\abntrefinfo{{Ellen MacArthur Foundation}}{{Ellen MacArthur Foundation}}{2023}
+{{Ellen MacArthur Foundation}. \textbf{O que é economia circular?} 2023.
+Dispon{\'\i}vel em:
+  \url{https://www.ellenmacarthurfoundation.org/pt/temas/economia-circular-introducao/visao-geral}.}
+
+\bibitem[{European Union} 2012]{EUWEEE2012}
+\abntrefinfo{{European Union}}{{European Union}}{2012}
+{{European Union}. \textbf{Directive 2012/19/EU of the European Parliament and
+  of the Council of 4 July 2012 on waste electrical and electronic equipment
+  (WEEE)}. 2012.
+Official Journal of the European Union, L 197/38.
+Dispon{\'\i}vel em:
+  \url{https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32012L0019}.}
 
 \bibitem[Fielding 2000]{fielding2000}
 \abntrefinfo{Fielding}{FIELDING}{2000}
 {FIELDING, R.~T.
-\textbf{Architectural Styles and the Design of Network-based Software
-  Architectures}.
-Tese (Doutorado) --- University of California, Irvine, 2000.}
+\textbf{Architectural styles and the design of network-based software
+  architectures}.
+Tese (Doutorado) --- University of California, Irvine, 2000.
+Dispon{\'\i}vel em:
+  \url{https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm}.}
+
+\bibitem[Forti et al. 2020]{Forti2020}
+\abntrefinfo{Forti et al.}{FORTI et al.}{2020}
+{FORTI, V. et al. \textbf{The global e-waste monitor 2020: Quantities, flows
+  and the circular economy potential}.
+Bonn/Geneva/Rotterdam, 2020. Dispon{\'\i}vel em:
+  \url{https://ewastemonitor.info/gem-2020/}.}
 
 \bibitem[Forti et al. 2024]{forti2024}
 \abntrefinfo{Forti et al.}{FORTI et al.}{2024}
-{FORTI, V. et al. \textbf{Global E-waste Monitor 2024: Electronic Waste Rising
-  Five Times Faster Than Documented E-waste Recycling}. Geneva: UNITAR, 2024.
-Dispon{\'\i}vel em: \url{https://ewastemonitor.info/}.}
+{FORTI, V. et al. \textbf{Global e-waste monitor 2024: Electronic waste rising
+  five times faster than documented e-waste recycling}.
+Geneva, 2024. Dispon{\'\i}vel em:
+  \url{https://ewastemonitor.info/the-global-e-waste-monitor-2024/}.}
 
-\bibitem[Foundation 2023]{ellen2023}
-\abntrefinfo{Foundation}{FOUNDATION}{2023}
-{FOUNDATION, E.~M. \textbf{What is a circular economy?} 2023.
+\bibitem[Geissdoerfer et al. 2017]{Geissdoerfer2017}
+\abntrefinfo{Geissdoerfer et al.}{GEISSDOERFER et al.}{2017}
+{GEISSDOERFER, M. et al. The circular economy – a new sustainability
+  paradigm?
+\textbf{Journal of Cleaner Production}, v.~143, p. 757--768, 2017.
+Doi:10.1016/j.jclepro.2016.12.048.}
+
+\bibitem[{Google} 2024]{angular2024}
+\abntrefinfo{{Google}}{{Google}}{2024}
+{{Google}. \textbf{Angular documentation}. 2024.
+Dispon{\'\i}vel em: \url{https://angular.io}.}
+
+\bibitem[{Green Eletron} 2022]{GreenEletron2022}
+\abntrefinfo{{Green Eletron}}{{Green Eletron}}{2022}
+{{Green Eletron}. \textbf{Desafios para a reciclagem do lixo eletrônico no
+  Brasil}. 2022.
+Artigo de blog.
 Dispon{\'\i}vel em:
-  \url{https://www.ellenmacarthurfoundation.org/pt/temas/economia-circular-introducao/visao-geral}.}
+  \url{https://www.greeneletron.org.br/blog/desafios-para-a-reciclagem-do-lixo-eletronico-no-brasil/}.}
+
+\bibitem[Heacock et al. 2016]{Heacock2016}
+\abntrefinfo{Heacock et al.}{HEACOCK et al.}{2016}
+{HEACOCK, M. et al. E-waste and harm to vulnerable populations: A growing
+  global problem.
+\textbf{Environmental Health Perspectives}, v.~124, n.~5, p. 550--555, 2016.
+Doi:10.1289/ehp.1509699.}
+
+\bibitem[Kirchherr, Reike e Hekkert 2017]{Kirchherr2017}
+\abntrefinfo{Kirchherr, Reike e Hekkert}{KIRCHHERR; REIKE; HEKKERT}{2017}
+{KIRCHHERR, J.; REIKE, D.; HEKKERT, M. Conceptualizing the circular economy: An
+  analysis of 114 definitions.
+\textbf{Resources, Conservation and Recycling}, v.~127, p. 221--232, 2017.
+Doi:10.1016/j.resconrec.2017.09.005.}
+
+\bibitem[{Microsoft} 2024]{dotnet2024}
+\abntrefinfo{{Microsoft}}{{Microsoft}}{2024a}
+{{Microsoft}. \textbf{Documentação do .NET}. 2024.
+Dispon{\'\i}vel em: \url{https://dotnet.microsoft.com}.}
+
+\bibitem[{Microsoft} 2024]{sqlserver2024}
+\abntrefinfo{{Microsoft}}{{Microsoft}}{2024b}
+{{Microsoft}. \textbf{SQL Server documentation}. 2024.
+Dispon{\'\i}vel em: \url{https://www.microsoft.com/pt-br/sql-server}.}
+
+\bibitem[{Organisation for Economic Co-operation and Development (OECD)}
+  2019]{oecd2019}
+\abntrefinfo{{Organisation for Economic Co-operation and Development
+  (OECD)}}{{Organisation for Economic Co-operation and Development
+  (OECD)}}{2019}
+{{Organisation for Economic Co-operation and Development (OECD)}.
+  \textbf{Global material resources outlook to 2060: Economic drivers and
+  environmental consequences}. Paris: OECD Publishing, 2019.
+  Doi:10.1787/9789264307452-en.}
+
+\bibitem[Pereira e Sousa 2018]{Pereira2018}
+\abntrefinfo{Pereira e Sousa}{PEREIRA; SOUSA}{2018}
+{PEREIRA, J.~V.; SOUSA, R. M.~d. Obsolescência programada e o descarte de
+  resíduos eletroeletrônicos no brasil.
+\textbf{Revista Brasileira de Ciências Ambientais}, v.~48, p. 112--125, 2018.
+Doi:10.5327/z2176-947820180325.}
 
 \bibitem[Perkins et al. 2014]{perkins2014}
-\abntrefinfo{Perkins et al.}{PERKINS et al.}{2014}
-{PERKINS, D.~N. et al. E-waste: a global hazard.
-\textbf{Annals of Global Health}, v.~80, n.~4, p. 286--295, 2014.}
+\abntrefinfo{Perkins et al.}{PERKINS et al.}{2014a}
+{PERKINS, D.~N. et al. E-waste: A global hazard.
+\textbf{Annals of Global Health}, v.~80, n.~4, p. 286--295, 2014.
+Doi:10.1016/j.aogh.2014.10.001.}
 
-\bibitem[UNIFESO 2025]{unifeso2025}
-\abntrefinfo{UNIFESO}{UNIFESO}{2025}
-{UNIFESO, C. U.~S. dos~Órgãos. \textbf{Informações Institucionais e Dados
-  Acadêmicos}. 2025.
-Dispon{\'\i}vel em: \url{https://www.unifeso.edu.br}.}
+\bibitem[Perkins et al. 2014]{perkins2014b}
+\abntrefinfo{Perkins et al.}{PERKINS et al.}{2014b}
+{PERKINS, D.~N. et al. Health and environmental hazards of e-waste and its
+  management: A review.
+\textbf{Journal of Environmental Management}, v.~146, p. 424--432, 2014.
+Doi:10.1016/j.jenvman.2014.07.039.}
+
+\bibitem[Pressman e Maxim 2014]{Pressman2014}
+\abntrefinfo{Pressman e Maxim}{PRESSMAN; MAXIM}{2014}
+{PRESSMAN, R.~S.; MAXIM, B.~R. \textbf{Software engineering: A practitioner's
+  approach}. 8. ed. New York: McGraw-Hill Education, 2014.}
+
+\bibitem[Robinson 2009]{Robinson2009}
+\abntrefinfo{Robinson}{ROBINSON}{2009}
+{ROBINSON, B.~H. E-waste: An assessment of global production and environmental
+  impacts.
+\textbf{Science of the Total Environment}, v.~408, n.~2, p. 183--191, 2009.
+Doi:10.1016/j.scitotenv.2009.09.044.}
+
+\bibitem[Widmer et al. 2005]{Widmer2005}
+\abntrefinfo{Widmer et al.}{WIDMER et al.}{2005}
+{WIDMER, R. et al. Global perspectives on e-waste.
+\textbf{Environmental Impact Assessment Review}, v.~25, n.~5, p. 436--458,
+  2005.
+Doi:10.1016/j.eiar.2005.04.001.}
 
 \end{thebibliography}
