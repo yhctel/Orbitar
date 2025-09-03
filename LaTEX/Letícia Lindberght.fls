@@ -1,6 +1,6 @@
-PWD d:\Letícia\orbitar\modelo_TCC_LaTEX
+PWD d:\Letícia\orbitar\modelo_TCC_LaTEX\LaTEX
 INPUT C:\Users\Rosangela\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT d:\Letícia\orbitar\modelo_TCC_LaTEX\Letícia Lindberght.tex
+INPUT d:\Letícia\orbitar\modelo_TCC_LaTEX\LaTEX\Letícia Lindberght.tex
 OUTPUT Letícia Lindberght.log
 INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex\latex\abntex2\abntex2.cls
 INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex\latex\abntex2\abntex2.cls

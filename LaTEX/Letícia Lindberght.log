@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.27)  2 SEP 2025 22:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.27)  2 SEP 2025 23:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"d:/Letícia/orbitar/modelo_TCC_LaTEX/Letícia Lindberght.tex"
-(d:/Letícia/orbitar/modelo_TCC_LaTEX/Letícia Lindberght.tex
+**"d:/Letícia/orbitar/modelo_TCC_LaTEX/LaTEX/Letícia Lindberght.tex"
+(d:/Letícia/orbitar/modelo_TCC_LaTEX/LaTEX/Letícia Lindberght.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
 (C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex/latex/abntex2\abntex2.cls
@@ -1167,14 +1167,14 @@ L3 programming layer <2020/03/25>
  ) 
 Here is how much of TeX's memory you used:
  21777 strings out of 468133
- 361100 string characters out of 5428783
+ 361190 string characters out of 5428783
  918499 words of memory out of 5000000
  49915 multiletter control sequences out of 15000+600000
  673961 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,12n,107p,999b,704s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,12n,107p,1005b,704s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Letícia Lindberght.pdf" (30 pages, 187902 bytes).
+Output written on "Letícia Lindberght.pdf" (30 pages, 187907 bytes).
 PDF statistics:
  532 PDF objects out of 1000 (max. 8388607)
  123 named destinations out of 1000 (max. 500000)
