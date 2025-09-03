@@ -1,20 +1,20 @@
 # Fdb version 4
-["bibtex Letícia Lindberght"] 1756865019.91287 "Letícia Lindberght.aux" "Letícia Lindberght.bbl" "Letícia Lindberght" 1756865030.79851 0
-  "./bibliografia.bib" 1756863373 7791 16803d70e4f6137e4866d2e0a764dd01 ""
+["bibtex Letícia Lindberght"] 1756865890.92549 "Letícia Lindberght.aux" "Letícia Lindberght.bbl" "Letícia Lindberght" 1756865901.29861 0
+  "./bibliografia.bib" 1756865797 7831 e50593c44ccd3dfe839e4bf11a11c78e ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/bibtex/bib/abntex2/abntex2-options.bib" 1543103229 5396 4eb260dac60f150ae608d45252853090 ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/bibtex/bst/abntex2/abntex2-alf.bst" 1543103230 60064 0819ac8568f9a482510a46e3a8a6f605 ""
-  "Letícia Lindberght.aux" 1756865025 28487 6f0580973654a5ef469cf4bf38903aff "pdflatex"
+  "Letícia Lindberght.aux" 1756865898 28658 cb77d0275b671839c97863f3ef9b3e01 "pdflatex"
   (generated)
   "Letícia Lindberght.bbl"
   "Letícia Lindberght.blg"
   (rewritten before read)
-["makeindex Letícia Lindberght.idx"] 1756862777.12713 "Letícia Lindberght.idx" "Letícia Lindberght.ind" "Letícia Lindberght" 1756865030.79609 0
-  "Letícia Lindberght.idx" 1756865024 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex Letícia Lindberght.idx"] 1756862777.12713 "Letícia Lindberght.idx" "Letícia Lindberght.ind" "Letícia Lindberght" 1756865901.29717 0
+  "Letícia Lindberght.idx" 1756865896 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "Letícia Lindberght.ilg"
   "Letícia Lindberght.ind"
   (rewritten before read)
-["pdflatex"] 1756865020.87056 "d:/Letícia/orbitar/modelo_TCC_LaTEX/LaTEX/Letícia Lindberght.tex" "Letícia Lindberght.pdf" "Letícia Lindberght" 1756865030.80194 0
+["pdflatex"] 1756865892.22499 "d:/Letícia/orbitar/modelo_TCC_LaTEX/LaTEX/Letícia Lindberght.tex" "Letícia Lindberght.pdf" "Letícia Lindberght" 1756865901.30123 0
   "C:/Users/Rosangela/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1756680855 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Rosangela/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1756342574 13259272 73a0ae041f3b6e868977f7309fd90bd8 ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -165,16 +165,16 @@
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
-  "Letícia Lindberght.aux" 1756865025 28487 6f0580973654a5ef469cf4bf38903aff "pdflatex"
-  "Letícia Lindberght.bbl" 1756865020 7877 6677916ab3c9f6e49948724e424b0777 "bibtex Letícia Lindberght"
+  "Letícia Lindberght.aux" 1756865898 28658 cb77d0275b671839c97863f3ef9b3e01 "pdflatex"
+  "Letícia Lindberght.bbl" 1756865892 7916 c8028fc56757a883f81b4cb9c169b403 "bibtex Letícia Lindberght"
   "Letícia Lindberght.ind" 1756862777 0 d41d8cd98f00b204e9800998ecf8427e "makeindex Letícia Lindberght.idx"
-  "Letícia Lindberght.loa" 1756865025 120 4b5392bf4295ae9f4473a7a4fff7fdc5 "pdflatex"
-  "Letícia Lindberght.lof" 1756865025 173 9dcde2aecbccab19c048f85c0888e1ac "pdflatex"
-  "Letícia Lindberght.loq" 1756865025 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "Letícia Lindberght.lot" 1756865025 58 29d9d42ff4957e64b6fbf83bd5f476ea "pdflatex"
-  "Letícia Lindberght.tex" 1756865004 28384 267146ecf13d065be231044ec05cff6b ""
-  "Letícia Lindberght.toc" 1756865025 5166 287fd6e1b9df1b0e04c20e867753db42 "pdflatex"
-  "d:/Letícia/orbitar/modelo_TCC_LaTEX/LaTEX/Letícia Lindberght.tex" 1756865004 28384 267146ecf13d065be231044ec05cff6b ""
+  "Letícia Lindberght.loa" 1756865898 120 4b5392bf4295ae9f4473a7a4fff7fdc5 "pdflatex"
+  "Letícia Lindberght.lof" 1756865898 173 9dcde2aecbccab19c048f85c0888e1ac "pdflatex"
+  "Letícia Lindberght.loq" 1756865898 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "Letícia Lindberght.lot" 1756865898 58 29d9d42ff4957e64b6fbf83bd5f476ea "pdflatex"
+  "Letícia Lindberght.tex" 1756865856 28389 14cc0807e4ac56da04132cc96491c4ae ""
+  "Letícia Lindberght.toc" 1756865898 5182 67fda3df7cd7e3f0554b954c38ba016b "pdflatex"
+  "d:/Letícia/orbitar/modelo_TCC_LaTEX/LaTEX/Letícia Lindberght.tex" 1756865856 28389 14cc0807e4ac56da04132cc96491c4ae ""
   "imagens/UNIFESO.png" 1544572511 33500 24823069d2a3d9dcd9086a4bc22380cf ""
   "modelo-ufpa/ufpa.sty" 1756341674 10096 df595a5a2aba475ff7e58af369fe330f ""
   (generated)

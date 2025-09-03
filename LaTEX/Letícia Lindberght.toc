@@ -22,18 +22,18 @@
 \contentsline {subsection}{\numberline {2.1.1}Definição e Escopo}{17}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Composição e Periculosidade}{18}{subsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.1.3}Impactos Ambientais e na Saúde Humana}{18}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Causas do Aumento Exponencial}{18}{subsection.2.1.4}%
-\contentsline {section}{\numberline {2.2}A Economia Circular como Solução Estratégica}{19}{section.2.2}%
+\contentsline {subsection}{\numberline {2.1.4}Causas do Aumento do Descarte de Equipamentos}{18}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2.2}A Economia Circular como Solução Estratégica}{18}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}O Contraste com a Economia Linear}{19}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Princípios da Economia Circular}{19}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}A Hierarquia dos 5 Rs da Sustentabilidade}{19}{subsection.2.2.3}%
 \contentsline {section}{\numberline {2.3}Reutilização de Eletrônicos e o Combate à Exclusão Digital}{19}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}A Reutilização como Estratégia Prioritária}{20}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.1}A Reutilização como Estratégia Prioritária}{19}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}O Cenário da Exclusão Digital no Brasil}{20}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}A Tecnologia como Ponte para a Inclusão}{20}{subsection.2.3.3}%
 \contentsline {section}{\numberline {2.4}Tecnologias para o Desenvolvimento da Solução}{20}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Arquitetura de Aplicações Web Modernas}{20}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Desenvolvimento Back-end com C\# e .NET}{21}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.2}Desenvolvimento Back-end com C\# e .NET}{20}{subsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.4.3}Desenvolvimento Front-end com Angular}{21}{subsection.2.4.3}%
 \contentsline {subsection}{\numberline {2.4.4}Banco de Dados com SQL Server}{21}{subsection.2.4.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
