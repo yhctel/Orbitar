@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orbitar.Domain", "src\Orbitar.Domain\Orbitar.Domain.csproj", "{C440B7F5-8831-435D-9B0A-D4E7B051C7AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orbitar.Application", "src\Orbitar.Application\Orbitar.Application.csproj", "{4B40549F-A22A-4EFF-842A-00B0929A02AD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C440B7F5-8831-435D-9B0A-D4E7B051C7AF} = {C440B7F5-8831-435D-9B0A-D4E7B051C7AF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orbitar.Infrastructure", "src\Orbitar.Infrastructure\Orbitar.Infrastructure.csproj", "{62F176EE-38F0-4083-855C-C66AB4155FE2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C440B7F5-8831-435D-9B0A-D4E7B051C7AF} = {C440B7F5-8831-435D-9B0A-D4E7B051C7AF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orbitar.Api", "src\Orbitar.Api\Orbitar.Api.csproj", "{2AAC8D70-60DF-4ADC-A154-B7A2D10CA391}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4B40549F-A22A-4EFF-842A-00B0929A02AD} = {4B40549F-A22A-4EFF-842A-00B0929A02AD}
+		{62F176EE-38F0-4083-855C-C66AB4155FE2} = {62F176EE-38F0-4083-855C-C66AB4155FE2}
+		{C440B7F5-8831-435D-9B0A-D4E7B051C7AF} = {C440B7F5-8831-435D-9B0A-D4E7B051C7AF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C440B7F5-8831-435D-9B0A-D4E7B051C7AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C440B7F5-8831-435D-9B0A-D4E7B051C7AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C440B7F5-8831-435D-9B0A-D4E7B051C7AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C440B7F5-8831-435D-9B0A-D4E7B051C7AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B40549F-A22A-4EFF-842A-00B0929A02AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B40549F-A22A-4EFF-842A-00B0929A02AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B40549F-A22A-4EFF-842A-00B0929A02AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B40549F-A22A-4EFF-842A-00B0929A02AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62F176EE-38F0-4083-855C-C66AB4155FE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62F176EE-38F0-4083-855C-C66AB4155FE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62F176EE-38F0-4083-855C-C66AB4155FE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62F176EE-38F0-4083-855C-C66AB4155FE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AAC8D70-60DF-4ADC-A154-B7A2D10CA391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AAC8D70-60DF-4ADC-A154-B7A2D10CA391}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AAC8D70-60DF-4ADC-A154-B7A2D10CA391}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AAC8D70-60DF-4ADC-A154-B7A2D10CA391}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C440B7F5-8831-435D-9B0A-D4E7B051C7AF} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{4B40549F-A22A-4EFF-842A-00B0929A02AD} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{62F176EE-38F0-4083-855C-C66AB4155FE2} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{2AAC8D70-60DF-4ADC-A154-B7A2D10CA391} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FCCB1027-CA99-46F8-B8AC-AB4225E41FB6}
+	EndGlobalSection
+EndGlobal
