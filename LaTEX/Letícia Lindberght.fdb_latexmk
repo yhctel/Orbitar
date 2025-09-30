@@ -1,25 +1,24 @@
 # Fdb version 4
-["bibtex Letícia Lindberght"] 1756865890.92549 "Letícia Lindberght.aux" "Letícia Lindberght.bbl" "Letícia Lindberght" 1756865901.29861 0
-  "./bibliografia.bib" 1756865797 7831 e50593c44ccd3dfe839e4bf11a11c78e ""
+["bibtex Letícia Lindberght"] 1759268475.97431 "Letícia Lindberght.aux" "Letícia Lindberght.bbl" "Letícia Lindberght" 1759268493.07923 0
+  "./bibliografia.bib" 1759268469 9366 676e870d06f90bcf964be34826fe366e ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/bibtex/bib/abntex2/abntex2-options.bib" 1543103229 5396 4eb260dac60f150ae608d45252853090 ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/bibtex/bst/abntex2/abntex2-alf.bst" 1543103230 60064 0819ac8568f9a482510a46e3a8a6f605 ""
-  "Letícia Lindberght.aux" 1756865898 28658 cb77d0275b671839c97863f3ef9b3e01 "pdflatex"
+  "Letícia Lindberght.aux" 1759268490 23805 6aeb16a2a9df224b19f09b71ee2108f5 "pdflatex"
   (generated)
   "Letícia Lindberght.bbl"
   "Letícia Lindberght.blg"
   (rewritten before read)
-["makeindex Letícia Lindberght.idx"] 1756862777.12713 "Letícia Lindberght.idx" "Letícia Lindberght.ind" "Letícia Lindberght" 1756865901.29717 0
-  "Letícia Lindberght.idx" 1756865896 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex Letícia Lindberght.idx"] 1759267054.1953 "Letícia Lindberght.idx" "Letícia Lindberght.ind" "Letícia Lindberght" 1759268493.07793 0
+  "Letícia Lindberght.idx" 1759268486 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "Letícia Lindberght.ilg"
   "Letícia Lindberght.ind"
   (rewritten before read)
-["pdflatex"] 1756865892.22499 "d:/Letícia/orbitar/modelo_TCC_LaTEX/LaTEX/Letícia Lindberght.tex" "Letícia Lindberght.pdf" "Letícia Lindberght" 1756865901.30123 0
-  "C:/Users/Rosangela/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1756680855 82507 a9eef8696c92627b87e9975edea03b2a ""
+["pdflatex"] 1759268476.69271 "d:/Letícia/Orbitar/LaTEX/Letícia Lindberght.tex" "Letícia Lindberght.pdf" "Letícia Lindberght" 1759268493.0812 0
+  "C:/Users/Rosangela/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1759266940 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Rosangela/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1756342574 13259272 73a0ae041f3b6e868977f7309fd90bd8 ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmb7t.tfm" 1136783054 2172 fd0c924230362ff848a33632ed45dc23 ""
-  "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmb8c.tfm" 1136783054 1340 d2f6275bc4fa3f07e3bc50aae2c71eab ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmb8r.tfm" 1136783054 4524 6bce29db5bc272ba5f332261583fee9c ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmb8t.tfm" 1136783054 6880 f19b8995b61c334d78fc734065f6b4d4 ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmbc8t.tfm" 1136783054 16820 c06a5e067b0ad78c9474777b7e2265b7 ""
@@ -41,7 +40,6 @@
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb" 1136864148 44729 fea0975e20ec51c992338362f05f1146 ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb" 1136864148 46026 687528a208fbfc1f00832bb96cccebbb ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb" 1136864148 45458 504e2b06fa82109d168c7a0afb09e145 ""
-  "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/ptmb8c.vf" 1136783054 3556 f148a8ed6ef01fed553027171e4f9b22 ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/ptmb8t.vf" 1136783054 2340 df9c920cc5688ebbf16a93f45ce7bdd3 ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/ptmbc8t.vf" 1136783054 3604 b996520a6e31a74c2f4ad8c7ea17c389 ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/ptmr8c.vf" 1136783054 3556 8a9a6dcbcd146ef985683f677f4758a6 ""
@@ -101,6 +99,7 @@
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/tex/latex/eso-pic/eso-pic.sty" 1683737457 11876 6ef493863ae0d7a984706973240c2237 ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/tex/latex/etoolbox/etoolbox.sty" 1739279216 46850 d87daedc2abdc653769a6f1067849fe0 ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/tex/latex/fancyvrb/fancyvrb.sty" 1754656040 43717 653cd083c203051741d10c7e48c3b24f ""
+  "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/tex/latex/float/float.sty" 1469023953 6916 16d2656a1984957e674b149555f1ea1d ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/tex/latex/graphics-cfg/color.cfg" 1465894292 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/tex/latex/graphics-cfg/graphics.cfg" 1465894292 1224 978390e9c2234eab29404bc21b268d1e ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/tex/latex/graphics-def/pdftex.def" 1713599642 19440 9da9dcbb27470349a580fca7372d454b ""
@@ -165,18 +164,20 @@
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
-  "Letícia Lindberght.aux" 1756865898 28658 cb77d0275b671839c97863f3ef9b3e01 "pdflatex"
-  "Letícia Lindberght.bbl" 1756865892 7916 c8028fc56757a883f81b4cb9c169b403 "bibtex Letícia Lindberght"
-  "Letícia Lindberght.ind" 1756862777 0 d41d8cd98f00b204e9800998ecf8427e "makeindex Letícia Lindberght.idx"
-  "Letícia Lindberght.loa" 1756865898 120 4b5392bf4295ae9f4473a7a4fff7fdc5 "pdflatex"
-  "Letícia Lindberght.lof" 1756865898 173 9dcde2aecbccab19c048f85c0888e1ac "pdflatex"
-  "Letícia Lindberght.loq" 1756865898 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "Letícia Lindberght.lot" 1756865898 58 29d9d42ff4957e64b6fbf83bd5f476ea "pdflatex"
-  "Letícia Lindberght.tex" 1756865856 28389 14cc0807e4ac56da04132cc96491c4ae ""
-  "Letícia Lindberght.toc" 1756865898 5182 67fda3df7cd7e3f0554b954c38ba016b "pdflatex"
-  "d:/Letícia/orbitar/modelo_TCC_LaTEX/LaTEX/Letícia Lindberght.tex" 1756865856 28389 14cc0807e4ac56da04132cc96491c4ae ""
-  "imagens/UNIFESO.png" 1544572511 33500 24823069d2a3d9dcd9086a4bc22380cf ""
-  "modelo-ufpa/ufpa.sty" 1756341674 10096 df595a5a2aba475ff7e58af369fe330f ""
+  "Letícia Lindberght.aux" 1759268490 23805 6aeb16a2a9df224b19f09b71ee2108f5 "pdflatex"
+  "Letícia Lindberght.bbl" 1759268476 6653 aa0e20104a26886bca05b2177f6c2cce "bibtex Letícia Lindberght"
+  "Letícia Lindberght.ind" 1759267055 0 d41d8cd98f00b204e9800998ecf8427e "makeindex Letícia Lindberght.idx"
+  "Letícia Lindberght.loa" 1759268490 140 104a8a462b27a2267fd07b368245cdd0 "pdflatex"
+  "Letícia Lindberght.lof" 1759268490 453 8127dd847ca496be1b77a9f732e3bc10 "pdflatex"
+  "Letícia Lindberght.loq" 1759268490 134 71cb4e4a2b5e62cc15de20c20f1ceba3 "pdflatex"
+  "Letícia Lindberght.lot" 1759268490 58 29d9d42ff4957e64b6fbf83bd5f476ea "pdflatex"
+  "Letícia Lindberght.tex" 1759267952 30041 635b5250e6d9ff6c77d77468f55ec2b9 ""
+  "Letícia Lindberght.toc" 1759268490 4403 02a4766801960de194bdaa0656fd2607 "pdflatex"
+  "d:/Letícia/Orbitar/LaTEX/Letícia Lindberght.tex" 1759267952 30041 635b5250e6d9ff6c77d77468f55ec2b9 ""
+  "imagens/compara.png" 1759113701 236671 6dc3636836ddb02d8341949259715cab ""
+  "imagens/economia_linear.png" 1759078796 103780 5cadb0bbfb89286542ffcf34ef58f213 ""
+  "imagens/hierarquia_5Rs.png" 1759113676 69419 44ba256bea4b138b10e082acc6eca4d9 ""
+  "modelo-ufpa/ufpa.sty" 1757880069 10446 df595a5a2aba475ff7e58af369fe330f ""
   (generated)
   "Letícia Lindberght.aux"
   "Letícia Lindberght.idx"

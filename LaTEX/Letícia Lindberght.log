@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.27)  2 SEP 2025 23:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.27)  30 SEP 2025 18:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"d:/Letícia/orbitar/modelo_TCC_LaTEX/LaTEX/Letícia Lindberght.tex"
-(d:/Letícia/orbitar/modelo_TCC_LaTEX/LaTEX/Letícia Lindberght.tex
+**"d:/Letícia/Orbitar/LaTEX/Letícia Lindberght.tex"
+(d:/Letícia/Orbitar/LaTEX/Letícia Lindberght.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
 (C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex/latex/abntex2\abntex2.cls
@@ -891,13 +891,20 @@ Package: modelo-ufpa/ufpa 2016/05/10 Criacao desta customizacao do abnTeX2
 \cftbeforegraficoskip=\skip307
 \cftgraficoindent=\skip308
 \cftgraficonumwidth=\skip309
+) (C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count399
+\float@exts=\toks44
+\float@box=\box72
+\@float@everytoks=\toks45
+\@floatcapt=\box73
 ) (C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex/latex/abntex2\abntex2cite.sty
 Package: abntex2cite 2018/11/24 v-1.9.7 abnTeX2
  (C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex/latex/abntex2\abntex2abrev.sty)
 \minimumbiblabelwidth=\skip310
 \ABCIauxlen=\skip311
-\c@ABCIaux=\count399
-\c@ABCImax=\count400
+\c@ABCIaux=\count400
+\c@ABCImax=\count401
  (C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifpdf.sty
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
 ) (C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifxetex.sty
@@ -906,11 +913,11 @@ Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 \biblabelsep=\skip312
 LaTeX Info: Redefining \newblock on input line 591.
 LaTeX Info: Redefining \cite on input line 618.
-\ABCItoken=\toks44
+\ABCItoken=\toks46
 )
-\c@experimento=\count401
-Package hyperref Info: Option `colorlinks' set `true' on input line 119.
-Package hyperref Info: Option `breaklinks' set `true' on input line 119.
+\c@experimento=\count402
+Package hyperref Info: Option `colorlinks' set `true' on input line 121.
+Package hyperref Info: Option `breaklinks' set `true' on input line 121.
 \"Letícia Lindberght"@idxfile=\write5
 \openout5 = `"Letícia Lindberght.idx"'.
 
@@ -922,42 +929,43 @@ Package babel Info: 'brazil' activates 'portuges' shorthands.
 )
 \openout1 = `"Letícia Lindberght.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-Package hyperref Info: Link coloring ON on input line 131.
-\myptabbox=\box72
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+Package hyperref Info: Link coloring ON on input line 133.
+\myptabbox=\box74
 \myptabboxwidth=\skip313
  (C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count402
+\scratchcounter=\count403
 \scratchdimen=\dimen290
-\scratchbox=\box73
-\nofMPsegments=\count403
-\nofMParguments=\count404
-\everyMPshowfont=\toks45
-\MPscratchCnt=\count405
+\scratchbox=\box75
+\nofMPsegments=\count404
+\nofMParguments=\count405
+\everyMPshowfont=\toks47
+\MPscratchCnt=\count406
 \MPscratchDim=\dimen291
-\MPnumerator=\count406
-\makeMPintoPDFobject=\count407
-\everyMPtoPDFconversion=\toks46
+\MPnumerator=\count407
+\makeMPintoPDFobject=\count408
+\everyMPtoPDFconversion=\toks48
 )
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
  (C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
@@ -972,39 +980,39 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 [1
 
 {C:/Users/Rosangela/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
-LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 148.
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 150.
  (C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 148.
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 150.
  (C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 148.
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 150.
  (C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 148.
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 150.
  (C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 148.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 150.
  (C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 148.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 150.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 148.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 150.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 148.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 150.
 
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.154 \newpage
+l.156 \newpage
                [1
 
 
@@ -1057,11 +1065,11 @@ l.154 \newpage
 
 ] (Letícia Lindberght.toc
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 42.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 42.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 42.
 )
 
 [13
@@ -1076,70 +1084,91 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 [15]
 
 [16]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 295.
+<imagens/economia_linear.png, id=193, 1084.05pt x 378.66469pt>
+File: imagens/economia_linear.png Graphic file (type png)
+<use imagens/economia_linear.png>
+Package pdftex.def Info: imagens/economia_linear.png  used on input line 310.
+(pdftex.def)             Requested size: 409.49722pt x 143.03893pt.
+
+
+[17
+
+ <./imagens/economia_linear.png>]
+<imagens/hierarquia_5Rs.png, id=216, 1059.96pt x 713.66624pt>
+File: imagens/hierarquia_5Rs.png Graphic file (type png)
+<use imagens/hierarquia_5Rs.png>
+Package pdftex.def Info: imagens/hierarquia_5Rs.png  used on input line 334.
+(pdftex.def)             Requested size: 318.49861pt x 214.4391pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--355
+[]|\T1/ptm/m/n/12 Unidirecional (extrair-usar-
+ []
+
+
+
+[18 <./imagens/hierarquia_5Rs.png>]
+<imagens/compara.png, id=234, 1425.07407pt x 713.66624pt>
+File: imagens/compara.png Graphic file (type png)
+<use imagens/compara.png>
+Package pdftex.def Info: imagens/compara.png  used on input line 367.
+(pdftex.def)             Requested size: 318.49861pt x 159.50078pt.
+
+
+[19 <./imagens/compara.png>]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 384.
  (C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
-[17
+[20
 
 ]
 
-[18]
+[21]
 
-[19]
+[22]
 
-[20]
-<imagens/UNIFESO.png, id=280, 501.875pt x 181.67876pt>
-File: imagens/UNIFESO.png Graphic file (type png)
-<use imagens/UNIFESO.png>
-Package pdftex.def Info: imagens/UNIFESO.png  used on input line 382.
-(pdftex.def)             Requested size: 250.93687pt x 90.83914pt.
-
-
-[21 <./imagens/UNIFESO.png>]
-
-[22
+[23
 
 ] (Letícia Lindberght.bbl
 
-[23
+[24
 
 ]
 bibitemlist
 
 
-[24
+[25
 
 ])
 
-[25]
+[26]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uppercase' on input line 415.
+(hyperref)                removing `\uppercase' on input line 444.
 
 
-
-[26
-
-
-]
 
 [27
 
+
 ]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uppercase' on input line 423.
-
-
 
 [28
 
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\uppercase' on input line 452.
+
+
+
+[29
+
 
 ]
 
-[29
+[30
 
 ]
 \tf@lof=\write6
@@ -1166,17 +1195,17 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 21777 strings out of 468133
- 361190 string characters out of 5428783
- 918499 words of memory out of 5000000
- 49915 multiletter control sequences out of 15000+600000
- 673961 words of font info for 108 fonts, out of 8000000 for 9000
+ 21839 strings out of 468133
+ 362275 string characters out of 5428783
+ 919932 words of memory out of 5000000
+ 49984 multiletter control sequences out of 15000+600000
+ 673650 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,12n,107p,1005b,704s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,12n,107p,902b,704s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Rosangela/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Letícia Lindberght.pdf" (30 pages, 188307 bytes).
+Output written on "Letícia Lindberght.pdf" (31 pages, 466901 bytes).
 PDF statistics:
- 533 PDF objects out of 1000 (max. 8388607)
- 123 named destinations out of 1000 (max. 500000)
- 366 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 474 PDF objects out of 1000 (max. 8388607)
+ 113 named destinations out of 1000 (max. 500000)
+ 312 words of extra memory for PDF output out of 10000 (max. 10000000)
 

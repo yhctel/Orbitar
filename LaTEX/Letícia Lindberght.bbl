@@ -5,22 +5,6 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
-\bibitem[{Brasil. Presidência da República} 2010]{Brasil2010}
-\abntrefinfo{{Brasil. Presidência da República}}{{Brasil. Presidência da
-  República}}{2010}
-{{Brasil. Presidência da República}. \textbf{Lei n.º 12.305, de 2 de agosto
-  de 2010. Institui a Política Nacional de Resíduos Sólidos}. 2010.
-Dispon{\'\i}vel em:
-  \url{http://www.planalto.gov.br/ccivil\_03/\_ato2007-2010/2010/lei/l12305.htm}.}
-
-\bibitem[{Centro Universitário Serra dos Órgãos (UNIFESO)}
-  2025]{unifeso2025}
-\abntrefinfo{{Centro Universitário Serra dos Órgãos (UNIFESO)}}{{Centro
-  Universitário Serra dos Órgãos (UNIFESO)}}{2025}
-{{Centro Universitário Serra dos Órgãos (UNIFESO)}. \textbf{Informações
-  institucionais e dados acadêmicos}. 2025.
-Dispon{\'\i}vel em: \url{https://www.unifeso.edu.br}.}
-
 \bibitem[{Comitê Gestor da Internet no Brasil (CGI.br)} 2024]{cgi2024}
 \abntrefinfo{{Comitê Gestor da Internet no Brasil (CGI.br)}}{{Comitê Gestor
   da Internet no Brasil (CGI.br)}}{2024}
@@ -29,6 +13,19 @@ Dispon{\'\i}vel em: \url{https://www.unifeso.edu.br}.}
   TIC Domicílios 2023}.
 São Paulo, 2024. Dispon{\'\i}vel em:
   \url{https://cgi.br/media/docs/publicacoes/2/20241104102822/tic\_domicilios\_2023\_livro\_eletronico.pdf}.}
+
+\bibitem[{Donate a Tech} 2024]{DonateTech}
+\abntrefinfo{{Donate a Tech}}{{Donate a Tech}}{2024}
+{{Donate a Tech}. \textbf{Donate Your Old Tech to Charity}. 2024.
+A data de acesso reflete a consulta para esta revisão.
+Dispon{\'\i}vel em: \url{https://donateatech.co.uk/}.}
+
+\bibitem[{eCycle} 2024]{E-cycle}
+\abntrefinfo{{eCycle}}{{eCycle}}{2024}
+{{eCycle}. \textbf{Sua busca por um mundo mais sustentável começa aqui}.
+  2024.
+A data de acesso reflete a consulta para esta revisão.
+Dispon{\'\i}vel em: \url{https://www.ecycle.com.br/}.}
 
 \bibitem[{Ellen MacArthur Foundation} 2013]{EMF2013}
 \abntrefinfo{{Ellen MacArthur Foundation}}{{Ellen MacArthur Foundation}}{2013}
@@ -43,24 +40,6 @@ Cowes, UK, 2013. Dispon{\'\i}vel em:
 Dispon{\'\i}vel em:
   \url{https://www.ellenmacarthurfoundation.org/pt/temas/economia-circular-introducao/visao-geral}.}
 
-\bibitem[{European Union} 2012]{EUWEEE2012}
-\abntrefinfo{{European Union}}{{European Union}}{2012}
-{{European Union}. \textbf{Directive 2012/19/EU of the European Parliament and
-  of the Council of 4 July 2012 on waste electrical and electronic equipment
-  (WEEE)}. 2012.
-Official Journal of the European Union, L 197/38.
-Dispon{\'\i}vel em:
-  \url{https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32012L0019}.}
-
-\bibitem[Fielding 2000]{fielding2000}
-\abntrefinfo{Fielding}{FIELDING}{2000}
-{FIELDING, R.~T.
-\textbf{Architectural styles and the design of network-based software
-  architectures}.
-Tese (Doutorado) --- University of California, Irvine, 2000.
-Dispon{\'\i}vel em:
-  \url{https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm}.}
-
 \bibitem[Forti et al. 2020]{Forti2020}
 \abntrefinfo{Forti et al.}{FORTI et al.}{2020}
 {FORTI, V. et al. \textbf{The global e-waste monitor 2020: Quantities, flows
@@ -74,13 +53,6 @@ Bonn/Geneva/Rotterdam, 2020. Dispon{\'\i}vel em:
   five times faster than documented e-waste recycling}.
 Geneva, 2024. Dispon{\'\i}vel em:
   \url{https://ewastemonitor.info/the-global-e-waste-monitor-2024/}.}
-
-\bibitem[Geissdoerfer et al. 2017]{Geissdoerfer2017}
-\abntrefinfo{Geissdoerfer et al.}{GEISSDOERFER et al.}{2017}
-{GEISSDOERFER, M. et al. The circular economy – a new sustainability
-  paradigm?
-\textbf{Journal of Cleaner Production}, v.~143, p. 757--768, 2017.
-Doi:10.1016/j.jclepro.2016.12.048.}
 
 \bibitem[{Google} 2024]{angular2024}
 \abntrefinfo{{Google}}{{Google}}{2024}
@@ -119,6 +91,15 @@ Dispon{\'\i}vel em: \url{https://dotnet.microsoft.com}.}
 {{Microsoft}. \textbf{SQL Server documentation}. 2024.
 Dispon{\'\i}vel em: \url{https://www.microsoft.com/pt-br/sql-server}.}
 
+\bibitem[Neto e Oliveira 2020]{SilvaNeto2020}
+\abntrefinfo{Neto e Oliveira}{NETO; OLIVEIRA}{2020}
+{NETO, J.~P. S.; OLIVEIRA, M.~S. de. Desenvolvimento de um aplicativo móvel
+  para gerenciamento de resíduos sólidos urbanos: um estudo de caso em
+  picos-pi.
+\textbf{Revista Brasileira de Gestão Ambiental e Sustentabilidade}, v.~7,
+  n.~15, p. 681--695, 2020.
+Doi:10.21438/rbgas.071505.}
+
 \bibitem[{Organisation for Economic Co-operation and Development (OECD)}
   2019]{oecd2019}
 \abntrefinfo{{Organisation for Economic Co-operation and Development
@@ -142,11 +123,6 @@ Doi:10.1016/j.aogh.2014.10.001.}
 \textbf{Journal of Environmental Management}, v.~146, p. 424--432, 2014.
 Doi:10.1016/j.jenvman.2014.07.039.}
 
-\bibitem[Pressman e Maxim 2014]{Pressman2014}
-\abntrefinfo{Pressman e Maxim}{PRESSMAN; MAXIM}{2014}
-{PRESSMAN, R.~S.; MAXIM, B.~R. \textbf{Software engineering: A practitioner's
-  approach}. 8. ed. New York: McGraw-Hill Education, 2014.}
-
 \bibitem[Robinson 2009]{Robinson2009}
 \abntrefinfo{Robinson}{ROBINSON}{2009}
 {ROBINSON, B.~H. E-waste: An assessment of global production and environmental
@@ -154,13 +130,11 @@ Doi:10.1016/j.jenvman.2014.07.039.}
 \textbf{Science of the Total Environment}, v.~408, n.~2, p. 183--191, 2009.
 Doi:10.1016/j.scitotenv.2009.09.044.}
 
-\bibitem[Rossini 2017]{Rossini2017}
-\abntrefinfo{Rossini}{ROSSINI}{2017}
-{ROSSINI, V. Obsolescência programada e meio ambiente: a geração de
-  resíduos de equipamentos eletroeletrônicos.
-\textbf{Revista de Direito e Sustentabilidade}, v.~3, n.~1, p. 45--60, 2017.
-Dispon{\'\i}vel em:
-  \url{https://www.indexlaw.org/index.php/revistards/article/view/2044}.}
+\bibitem[{The Freecycle Network} 2024]{Freecycle}
+\abntrefinfo{{The Freecycle Network}}{{The Freecycle Network}}{2024}
+{{The Freecycle Network}. \textbf{The Freecycle Network}. 2024.
+A data de acesso reflete a consulta para esta revisão.
+Dispon{\'\i}vel em: \url{https://www.freecycle.org/}.}
 
 \bibitem[Widmer et al. 2005]{Widmer2005}
 \abntrefinfo{Widmer et al.}{WIDMER et al.}{2005}

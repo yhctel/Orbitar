@@ -1,6 +1,6 @@
-PWD d:\Letícia\orbitar\modelo_TCC_LaTEX\LaTEX
+PWD d:\Letícia\Orbitar\LaTEX
 INPUT C:\Users\Rosangela\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT d:\Letícia\orbitar\modelo_TCC_LaTEX\LaTEX\Letícia Lindberght.tex
+INPUT d:\Letícia\Orbitar\LaTEX\Letícia Lindberght.tex
 OUTPUT Letícia Lindberght.log
 INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex\latex\abntex2\abntex2.cls
 INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex\latex\abntex2\abntex2.cls
@@ -227,6 +227,8 @@ INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex\latex\lipsum\lipsum.l
 INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex\latex\lipsum\lipsum.ltd.tex
 INPUT .\modelo-ufpa\ufpa.sty
 INPUT modelo-ufpa\ufpa.sty
+INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
+INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex\latex\abntex2\abntex2cite.sty
 INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex\latex\abntex2\abntex2cite.sty
 INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex\latex\abntex2\abntex2abrev.sty
@@ -351,25 +353,38 @@ INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptm
 INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8t.tfm
 INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr8t.vf
 INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT .\imagens\economia_linear.png
+INPUT .\imagens\economia_linear.png
+INPUT .\imagens\economia_linear.png
+INPUT .\imagens\economia_linear.png
+INPUT .\imagens\economia_linear.png
+INPUT .\imagens\economia_linear.png
+INPUT .\imagens\economia_linear.png
+INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8t.tfm
+INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
+INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
+INPUT .\imagens\hierarquia_5Rs.png
+INPUT .\imagens\hierarquia_5Rs.png
+INPUT .\imagens\hierarquia_5Rs.png
+INPUT .\imagens\hierarquia_5Rs.png
+INPUT .\imagens\hierarquia_5Rs.png
+INPUT .\imagens\hierarquia_5Rs.png
+INPUT .\imagens\hierarquia_5Rs.png
+INPUT .\imagens\compara.png
+INPUT .\imagens\compara.png
+INPUT .\imagens\compara.png
+INPUT .\imagens\compara.png
+INPUT .\imagens\compara.png
+INPUT .\imagens\compara.png
+INPUT .\imagens\compara.png
 INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ts1ptm.fd
 INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ts1ptm.fd
 INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ts1ptm.fd
 INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8c.tfm
 INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr8c.vf
-INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8t.tfm
-INPUT .\imagens\UNIFESO.png
-INPUT .\imagens\UNIFESO.png
-INPUT .\imagens\UNIFESO.png
-INPUT .\imagens\UNIFESO.png
-INPUT .\imagens\UNIFESO.png
-INPUT .\imagens\UNIFESO.png
-INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
-INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
 INPUT .\Letícia Lindberght.bbl
 INPUT .\Letícia Lindberght.bbl
 INPUT Letícia Lindberght.bbl
-INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8c.tfm
-INPUT C:\Users\Rosangela\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb8c.vf
 OUTPUT Letícia Lindberght.lof
 OUTPUT Letícia Lindberght.loq
 OUTPUT Letícia Lindberght.lot
