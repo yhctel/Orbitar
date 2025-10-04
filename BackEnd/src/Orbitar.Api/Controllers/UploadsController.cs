@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Orbitar.Infrastructure.Services;
 using System.Threading;
 using System.Threading.Tasks;
+using Orbitar.Application.DTOs.Uploads;
 
 namespace Orbitar.Api.Controllers;
 
@@ -21,21 +22,21 @@ public class UploadsController : ControllerBase
         _armazenamentoService = armazenamentoService;
     }
 
-   /* [HttpPost("imagem")]
+    [HttpPost("imagem")]
     [RequestSizeLimit(10 * 1024 * 1024)] // 10 MB
-    public async Task<IActionResult> UploadImagem([FromForm] IFormFile arquivo, CancellationToken ct)
+    public async Task<IActionResult> UploadImagem([FromForm] UploadImagemRequest request, CancellationToken ct)
     {
-        if (arquivo == null || arquivo.Length == 0)
+        if (request.Arquivo == null || request.Arquivo.Length == 0)
             return BadRequest("Imagem inválida");
 
-        await using var stream = arquivo.OpenReadStream();
-        var aprovada = await _moderacaoService.IsAllowedAsync(stream, arquivo.FileName, ct);
+        await using var stream = request.Arquivo.OpenReadStream();
+        var aprovada = await _moderacaoService.IsAllowedAsync(stream, request.Arquivo.FileName, ct);
         if (!aprovada)
             return BadRequest("Imagem reprovada pela moderação");
 
         stream.Position = 0;
-        var url = await _armazenamentoService.SaveAsync(stream, arquivo.FileName, ct);
+        var url = await _armazenamentoService.SaveAsync(stream, request.Arquivo.FileName, ct);
 
         return Ok(new { url });
-    }*/
+    }
 }

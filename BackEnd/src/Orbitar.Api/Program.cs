@@ -7,7 +7,6 @@ using Orbitar.Domain.Entities;
 using Orbitar.Infrastructure.Persistence;
 using Orbitar.Infrastructure.Services;
 using Microsoft.AspNetCore.Identity;
-using Orbitar.Api.Filters;
 using FluentValidation;
 using Orbitar.Application.Validators;
 using Orbitar.Application.Mapping;
@@ -22,8 +21,8 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 // Identity + JWT
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
-    .AddDefaultTokenProviders();
-
+    .AddDefaultTokenProviders()
+    .AddRoles<IdentityRole>();
 
 var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]!));
 
@@ -67,8 +66,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Orbitar API", Version = "v1" });
-    c.OperationFilter<UploadFilter>();
-
+ 
     var securityScheme = new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -83,7 +81,6 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 builder.Services.AddDirectoryBrowser();
-
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

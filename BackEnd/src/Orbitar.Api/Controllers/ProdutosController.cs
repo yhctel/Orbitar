@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Orbitar.Application.DTOs;
 using Orbitar.Application.DTOs.Produtos;
 using Orbitar.Domain.Entities;
 using Orbitar.Domain.Enums;
@@ -37,24 +38,38 @@ public class ProdutosController : ControllerBase
 
     // GET /api/produtos
     [HttpGet]
-    public async Task<ActionResult<List<ProdutoResponse>>> ObterTodos([FromQuery] CategoriaProduto? categoria, [FromQuery] CondicaoProduto? condicao)
+    public async Task<ActionResult<PagedResult<ProdutoResponse>>> ObterTodos(
+        [FromQuery] CategoriaProduto? categoria,
+        [FromQuery] CondicaoProduto? condicao,
+        [FromQuery] string? termoBusca,
+        [FromQuery] int pagina = 1,
+        [FromQuery] int itensPorPagina = 10)
     {
         var user = await _userManager.FindByIdAsync(UsuarioAtualId);
         if (user == null) return Unauthorized();
 
         var query = _db.Produtos
             .AsNoTracking()
-            .Include(p => p.Dono)
             .Where(p => p.Cidade == user.Cidade && p.Status == StatusProduto.Disponivel);
 
         if (categoria.HasValue) query = query.Where(p => p.Categoria == categoria);
         if (condicao.HasValue) query = query.Where(p => p.Condicao == condicao);
+        if (!string.IsNullOrWhiteSpace(termoBusca))
+        {
+            query = query.Where(p => p.Nome.Contains(termoBusca) || (p.Observacoes != null && p.Observacoes.Contains(termoBusca)));
+        }
 
-        var result = await query
+        var totalItens = await query.CountAsync();
+
+        var produtos = await query
             .OrderByDescending(p => p.DataCriacao)
+            .Skip((pagina - 1) * itensPorPagina)
+            .Take(itensPorPagina)
             .ProjectTo<ProdutoResponse>(_mapper.ConfigurationProvider)
             .ToListAsync();
-        return Ok(result);
+
+        var pagedResult = new PagedResult<ProdutoResponse>(produtos, totalItens, pagina, itensPorPagina);
+        return Ok(pagedResult);
     }
 
     // GET /api/produtos/meus
@@ -160,10 +175,18 @@ public class ProdutosController : ControllerBase
         if (reservaAtiva != null)
         {
             reservaAtiva.Status = StatusReserva.CanceladaPeloDoador;
+            var notificacaoReceptor = new Notificacao
+            {
+                UsuarioId = reservaAtiva.ReceptorId,
+                Mensagem = $"A reserva do produto '{produto.Nome}' foi cancelada, pois o doador removeu o anúncio."
+            };
+            _db.Notificacoes.Add(notificacaoReceptor);
         }
 
         _db.Produtos.Remove(produto);
+
         await _db.SaveChangesAsync();
+
         return NoContent();
     }
 

@@ -48,6 +48,13 @@ public class ReservasController : ControllerBase
         _db.Reservas.Add(reserva);
         await _db.SaveChangesAsync();
 
+        var notificacaoDoador = new Notificacao
+        {
+            UsuarioId = produto.DonoId,
+            Mensagem = $"Seu produto '{produto.Nome}' foi reservado por {usuario.NomeCompleto}."
+        };
+        _db.Notificacoes.Add(notificacaoDoador);
+        await _db.SaveChangesAsync();
         return Ok(new { reserva.Id, reserva.DataExpiracao });
     }
 

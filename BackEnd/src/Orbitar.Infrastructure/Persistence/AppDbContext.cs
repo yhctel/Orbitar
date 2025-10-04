@@ -11,6 +11,8 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
     public DbSet<Produto> Produtos => Set<Produto>();
     public DbSet<Reserva> Reservas => Set<Reserva>();
 
+    public DbSet<Notificacao> Notificacoes => Set<Notificacao>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
@@ -46,6 +48,15 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
                 .OnDelete(DeleteBehavior.Restrict);
 
             b.HasIndex(r => new { r.Status, r.DataExpiracao });
+        });
+
+        builder.Entity<Notificacao>(b =>
+        {
+            b.Property(p => p.Mensagem).IsRequired().HasMaxLength(500);
+            b.HasOne(n => n.Usuario)
+                .WithMany()
+                .HasForeignKey(n => n.UsuarioId)
+                .OnDelete(DeleteBehavior.Cascade); // Se o usuário for deletado, suas notificações também são.
         });
     }
 }
