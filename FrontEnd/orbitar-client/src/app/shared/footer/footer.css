@@ -1,0 +1,79 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.footer-container {
+  background-color: #212529; /* Cor de fundo escura */
+  color: #adb5bd; /* Cor do texto suave */
+  padding: 48px 50px;
+  font-family: 'Bricolage Grotesque', sans-serif; /* Use a fonte do seu projeto */
+}
+
+.footer-content {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 220px; /* Garante que as colunas não fiquem muito espremidas */
+}
+
+.footer-column h4 {
+  color: #fff; /* Títulos em branco */
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-column p {
+  line-height: 1.6;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-column ul a {
+  color: #adb5bd;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-column ul a:hover {
+  color: #fff;
+}
+
+/* Cores específicas dos ícones */
+.icon-economia { color: #f0ad4e; }
+.icon-sustentabilidade { color: #5cb85c; }
+.icon-solidariedade { color: #d9534f; }
+.icon-impacto { color: #5bc0de; }
+
+.footer-divider {
+  border: 0;
+  border-top: 1px solid #343a40;
+  margin: 2rem 0;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 0.875rem;
+}
