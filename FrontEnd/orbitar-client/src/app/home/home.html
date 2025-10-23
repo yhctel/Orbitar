@@ -1,0 +1,161 @@
+<div class="container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="text-center">
+        <h1 class="hero-title">
+          Orbitar
+        </h1>
+        <p class="hero-subtitle">
+          Uma plataforma sustentável que facilita a doação de produtos,
+          promovendo a economia circular e o impacto social positivo.
+        </p>
+
+        <div class="hero-buttons">
+          <ng-container *ngIf="isAuthenticated; else guestActions">
+            <a
+              routerLink="/produtos"
+              class="btn btn-primary"
+            >
+              <lucide-icon [name]="lucideGift" [size]="20"></lucide-icon>
+              <span>Ver Produtos</span>
+            </a>
+            <a
+              routerLink="/cadastrar-produto"
+              class="btn btn-secondary"
+            >
+              <lucide-icon [name]="lucideHeart" [size]="20"></lucide-icon>
+              <span>Fazer Doação</span>
+            </a>
+          </ng-container>
+          <ng-template #guestActions>
+            <!-- BOTÃO ATUALIZADO AQUI -->
+            <a
+              routerLink="/login"
+              class="btn btn-primary"
+            >
+              <span>Começar Agora</span>
+              <lucide-icon [name]="lucideArrowRight" [size]="20"></lucide-icon>
+            </a>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Como Funciona -->
+  <section class="how-it-works-section">
+    <!-- ... (Conteúdo desta seção permanece o mesmo) ... -->
+    <div class="section-content">
+      <div class="section-header">
+        <h2 class="section-title">
+          Como Funciona
+        </h2>
+        <p class="section-subtitle">
+          Processo simples e seguro para doações
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-item">
+          <div class="step-icon step-icon-blue">
+            <span>1</span>
+          </div>
+          <h3 class="step-title">Cadastre seu Produto</h3>
+          <p class="step-description">
+            Adicione fotos, descrição e informações sobre o item que deseja doar
+          </p>
+        </div>
+
+        <div class="step-item">
+          <div class="step-icon step-icon-green">
+            <span>2</span>
+          </div>
+          <h3 class="step-title">Receba Interessados</h3>
+          <p class="step-description">
+            Pessoas da sua cidade podem reservar seu produto por até 7 dias
+          </p>
+        </div>
+
+        <div class="step-item">
+          <div class="step-icon step-icon-purple">
+            <span>3</span>
+          </div>
+          <h3 class="step-title">Finalize a Doação</h3>
+          <p class="step-description">
+            Combine a entrega e marque como concluída para impactar vidas
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nossa Missão -->
+  <section class="mission-section">
+    <!-- ... (Conteúdo desta seção permanece o mesmo) ... -->
+    <div class="section-content">
+      <div class="section-header">
+        <h2 class="section-title">
+          Nossa Missão
+        </h2>
+        <p class="section-subtitle">
+          Impulsionando um futuro mais sustentável e solidário
+        </p>
+      </div>
+
+      <div class="mission-grid">
+        <div class="mission-item">
+          <div class="mission-icon">
+            <lucide-icon [name]="lucideLeaf" [size]="48" class="icon-primary"></lucide-icon>
+          </div>
+          <h3 class="mission-title">Sustentabilidade</h3>
+          <p class="mission-description">
+            Reduzir o desperdício, prolongar a vida útil de produtos e promover a economia circular.
+          </p>
+        </div>
+
+        <div class="mission-item">
+          <div class="mission-icon">
+            <lucide-icon [name]="lucideHandHeart" [size]="48" class="icon-secondary"></lucide-icon>
+          </div>
+          <h3 class="mission-title">Solidariedade</h3>
+          <p class="mission-description">
+            Conectar pessoas que precisam com quem pode doar, criando um ciclo de ajuda mútua.
+          </p>
+        </div>
+
+        <div class="mission-item">
+          <div class="mission-icon">
+            <lucide-icon [name]="lucideRefreshCw" [size]="48" class="icon-tertiary"></lucide-icon>
+          </div>
+          <h3 class="mission-title">Comunidade</h3>
+          <p class="mission-description">
+            Construir uma rede forte onde a doação é fácil, segura e impacta positivamente.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section">
+    <div class="section-content text-center">
+      <h2 class="cta-title">
+        Pronto para Fazer a Diferença?
+      </h2>
+      <p class="cta-subtitle">
+        Junte-se à nossa comunidade e contribua para um mundo mais sustentável
+      </p>
+
+      <ng-container>
+         <!-- BOTÃO ATUALIZADO AQUI -->
+        <a
+          routerLink="/login"
+          class="btn btn-cta"
+        >
+          Criar Conta Gratuita
+        </a>
+      </ng-container>
+    </div>
+  </section>
+</div>

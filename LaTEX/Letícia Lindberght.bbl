@@ -1,0 +1,146 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[{Comitê Gestor da Internet no Brasil (CGI.br)} 2024]{cgi2024}
+\abntrefinfo{{Comitê Gestor da Internet no Brasil (CGI.br)}}{{Comitê Gestor
+  da Internet no Brasil (CGI.br)}}{2024}
+{{Comitê Gestor da Internet no Brasil (CGI.br)}. \textbf{Pesquisa sobre o uso
+  das tecnologias de informação e comunicação nos domicílios brasileiros:
+  TIC Domicílios 2023}.
+São Paulo, 2024. Dispon{\'\i}vel em:
+  \url{https://cgi.br/media/docs/publicacoes/2/20241104102822/tic\_domicilios\_2023\_livro\_eletronico.pdf}.}
+
+\bibitem[{Donate a Tech} 2024]{DonateTech}
+\abntrefinfo{{Donate a Tech}}{{Donate a Tech}}{2024}
+{{Donate a Tech}. \textbf{Donate Your Old Tech to Charity}. 2024.
+A data de acesso reflete a consulta para esta revisão.
+Dispon{\'\i}vel em: \url{https://donateatech.co.uk/}.}
+
+\bibitem[{eCycle} 2024]{E-cycle}
+\abntrefinfo{{eCycle}}{{eCycle}}{2024}
+{{eCycle}. \textbf{Sua busca por um mundo mais sustentável começa aqui}.
+  2024.
+A data de acesso reflete a consulta para esta revisão.
+Dispon{\'\i}vel em: \url{https://www.ecycle.com.br/}.}
+
+\bibitem[{Ellen MacArthur Foundation} 2013]{EMF2013}
+\abntrefinfo{{Ellen MacArthur Foundation}}{{Ellen MacArthur Foundation}}{2013}
+{{Ellen MacArthur Foundation}. \textbf{Towards the Circular Economy, Vol.1:
+  Economic and business rationale for an accelerated transition}.
+Cowes, UK, 2013. Dispon{\'\i}vel em:
+  \url{https://www.ellenmacarthurfoundation.org/towards-the-circular-economy-vol-1-an-economic-and-business-rationale-for-an}.}
+
+\bibitem[{Ellen MacArthur Foundation} 2023]{ellen2023}
+\abntrefinfo{{Ellen MacArthur Foundation}}{{Ellen MacArthur Foundation}}{2023}
+{{Ellen MacArthur Foundation}. \textbf{O que é economia circular?} 2023.
+Dispon{\'\i}vel em:
+  \url{https://www.ellenmacarthurfoundation.org/pt/temas/economia-circular-introducao/visao-geral}.}
+
+\bibitem[Forti et al. 2020]{Forti2020}
+\abntrefinfo{Forti et al.}{FORTI et al.}{2020}
+{FORTI, V. et al. \textbf{The global e-waste monitor 2020: Quantities, flows
+  and the circular economy potential}.
+Bonn/Geneva/Rotterdam, 2020. Dispon{\'\i}vel em:
+  \url{https://ewastemonitor.info/gem-2020/}.}
+
+\bibitem[Forti et al. 2024]{forti2024}
+\abntrefinfo{Forti et al.}{FORTI et al.}{2024}
+{FORTI, V. et al. \textbf{Global e-waste monitor 2024: Electronic waste rising
+  five times faster than documented e-waste recycling}.
+Geneva, 2024. Dispon{\'\i}vel em:
+  \url{https://ewastemonitor.info/the-global-e-waste-monitor-2024/}.}
+
+\bibitem[{Google} 2024]{angular2024}
+\abntrefinfo{{Google}}{{Google}}{2024}
+{{Google}. \textbf{Angular documentation}. 2024.
+Dispon{\'\i}vel em: \url{https://angular.io}.}
+
+\bibitem[{Green Eletron} 2022]{GreenEletron2022}
+\abntrefinfo{{Green Eletron}}{{Green Eletron}}{2022}
+{{Green Eletron}. \textbf{Desafios para a reciclagem do lixo eletrônico no
+  Brasil}. 2022.
+Artigo de blog.
+Dispon{\'\i}vel em:
+  \url{https://www.greeneletron.org.br/blog/desafios-para-a-reciclagem-do-lixo-eletronico-no-brasil/}.}
+
+\bibitem[Heacock et al. 2016]{Heacock2016}
+\abntrefinfo{Heacock et al.}{HEACOCK et al.}{2016}
+{HEACOCK, M. et al. E-waste and harm to vulnerable populations: A growing
+  global problem.
+\textbf{Environmental Health Perspectives}, v.~124, n.~5, p. 550--555, 2016.
+Doi:10.1289/ehp.1509699.}
+
+\bibitem[Kirchherr, Reike e Hekkert 2017]{Kirchherr2017}
+\abntrefinfo{Kirchherr, Reike e Hekkert}{KIRCHHERR; REIKE; HEKKERT}{2017}
+{KIRCHHERR, J.; REIKE, D.; HEKKERT, M. Conceptualizing the circular economy: An
+  analysis of 114 definitions.
+\textbf{Resources, Conservation and Recycling}, v.~127, p. 221--232, 2017.
+Doi:10.1016/j.resconrec.2017.09.005.}
+
+\bibitem[{Microsoft} 2024]{dotnet2024}
+\abntrefinfo{{Microsoft}}{{Microsoft}}{2024a}
+{{Microsoft}. \textbf{Documentação do .NET}. 2024.
+Dispon{\'\i}vel em: \url{https://dotnet.microsoft.com}.}
+
+\bibitem[{Microsoft} 2024]{sqlserver2024}
+\abntrefinfo{{Microsoft}}{{Microsoft}}{2024b}
+{{Microsoft}. \textbf{SQL Server documentation}. 2024.
+Dispon{\'\i}vel em: \url{https://www.microsoft.com/pt-br/sql-server}.}
+
+\bibitem[Neto e Oliveira 2020]{SilvaNeto2020}
+\abntrefinfo{Neto e Oliveira}{NETO; OLIVEIRA}{2020}
+{NETO, J.~P. S.; OLIVEIRA, M.~S. de. Desenvolvimento de um aplicativo móvel
+  para gerenciamento de resíduos sólidos urbanos: um estudo de caso em
+  picos-pi.
+\textbf{Revista Brasileira de Gestão Ambiental e Sustentabilidade}, v.~7,
+  n.~15, p. 681--695, 2020.
+Doi:10.21438/rbgas.071505.}
+
+\bibitem[{Organisation for Economic Co-operation and Development (OECD)}
+  2019]{oecd2019}
+\abntrefinfo{{Organisation for Economic Co-operation and Development
+  (OECD)}}{{Organisation for Economic Co-operation and Development
+  (OECD)}}{2019}
+{{Organisation for Economic Co-operation and Development (OECD)}.
+  \textbf{Global material resources outlook to 2060: Economic drivers and
+  environmental consequences}. Paris: OECD Publishing, 2019.
+  Doi:10.1787/9789264307452-en.}
+
+\bibitem[Perkins et al. 2014]{perkins2014}
+\abntrefinfo{Perkins et al.}{PERKINS et al.}{2014a}
+{PERKINS, D.~N. et al. E-waste: A global hazard.
+\textbf{Annals of Global Health}, v.~80, n.~4, p. 286--295, 2014.
+Doi:10.1016/j.aogh.2014.10.001.}
+
+\bibitem[Perkins et al. 2014]{perkins2014b}
+\abntrefinfo{Perkins et al.}{PERKINS et al.}{2014b}
+{PERKINS, D.~N. et al. Health and environmental hazards of e-waste and its
+  management: A review.
+\textbf{Journal of Environmental Management}, v.~146, p. 424--432, 2014.
+Doi:10.1016/j.jenvman.2014.07.039.}
+
+\bibitem[Robinson 2009]{Robinson2009}
+\abntrefinfo{Robinson}{ROBINSON}{2009}
+{ROBINSON, B.~H. E-waste: An assessment of global production and environmental
+  impacts.
+\textbf{Science of the Total Environment}, v.~408, n.~2, p. 183--191, 2009.
+Doi:10.1016/j.scitotenv.2009.09.044.}
+
+\bibitem[{The Freecycle Network} 2024]{Freecycle}
+\abntrefinfo{{The Freecycle Network}}{{The Freecycle Network}}{2024}
+{{The Freecycle Network}. \textbf{The Freecycle Network}. 2024.
+A data de acesso reflete a consulta para esta revisão.
+Dispon{\'\i}vel em: \url{https://www.freecycle.org/}.}
+
+\bibitem[Widmer et al. 2005]{Widmer2005}
+\abntrefinfo{Widmer et al.}{WIDMER et al.}{2005}
+{WIDMER, R. et al. Global perspectives on e-waste.
+\textbf{Environmental Impact Assessment Review}, v.~25, n.~5, p. 436--458,
+  2005.
+Doi:10.1016/j.eiar.2005.04.001.}
+
+\end{thebibliography}
