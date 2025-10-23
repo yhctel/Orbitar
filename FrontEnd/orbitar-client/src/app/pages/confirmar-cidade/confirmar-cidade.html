@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="card">
+    <div *ngIf="status === 'loading'">
+      <h2>Confirmando alteração...</h2>
+      <p>Por favor, aguarde.</p>
+    </div>
+
+    <div *ngIf="status === 'success'">
+      <h2>Cidade alterada com sucesso!</h2>
+      <p>Sua cidade foi atualizada no seu perfil.</p>
+      <a routerLink="/perfil" class="btn">Voltar para o Perfil</a>
+    </div>
+
+    <div *ngIf="status === 'error'">
+      <h2>Ocorreu um erro</h2>
+      <p>O link de confirmação é inválido ou já expirou.</p>
+      <a routerLink="/perfil" class="btn">Tentar novamente</a>
+    </div>
+  </div>
+</div>

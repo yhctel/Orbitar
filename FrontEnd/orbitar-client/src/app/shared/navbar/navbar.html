@@ -1,0 +1,68 @@
+<nav class="navbar">
+  <div class="navbar-content">
+    <a routerLink="/" class="navbar-brand">
+      <div class="logo-icon">
+        <lucide-icon [name]="lucideGift" size="24"></lucide-icon>
+      </div>
+      <span>Plataforma de Doação</span>
+    </a>
+
+    <div class="nav-actions">
+      <ng-container *ngIf="isAuthenticated$ | async; else loggedOutNav">
+        <div class="navbar-links">
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <lucide-icon [name]="lucideHome" size="16"></lucide-icon>
+            <span>Início</span>
+          </a>
+          <a routerLink="/catalogo" routerLinkActive="active">
+            <span>Catálogo</span>
+          </a>
+          <a routerLink="/doar" routerLinkActive="active">
+            <lucide-icon [name]="lucidePlus" size="16"></lucide-icon>
+            <span>Doar</span>
+          </a>
+          <a routerLink="/minhas-doacoes" routerLinkActive="active">
+            <lucide-icon [name]="lucideHeart" size="16"></lucide-icon>
+            <span>Minhas Doações</span>
+          </a>
+        </div>
+        
+        <div class="navbar-user">
+          <div class="notification-wrapper">
+            <button (click)="toggleDropdown()" class="notification-button" aria-label="Abrir notificações">
+              <lucide-icon [name]="lucideBell" size="20"></lucide-icon>
+              <span *ngIf="(unreadCount$ | async) as count" [hidden]="count === 0" class="notification-badge">{{ count }}</span>
+            </button>
+            <div class="notification-dropdown" *ngIf="isDropdownOpen">
+            </div>
+          </div>
+          <a routerLink="/perfil" class="user-info">
+            <lucide-icon [name]="lucideUser" size="16"></lucide-icon>
+            <span>{{ userName }}</span>
+          </a>
+          <button (click)="signOut()" class="logout-button">
+            <lucide-icon [name]="lucideLogOut" size="16"></lucide-icon>
+            <span>Sair</span>
+          </button>
+        </div>
+      </ng-container>
+
+      <ng-template #loggedOutNav>
+        <div class="logged-out-links">
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <lucide-icon [name]="lucideHome" size="16"></lucide-icon>
+            <span>Início</span>
+          </a>
+          <a routerLink="/catalogo" routerLinkActive="active">
+            <lucide-icon [name]="lucideGift" size="16"></lucide-icon>
+            <span>Catálogo</span>
+          </a>
+        </div>
+        <button class="btn-login-nav" (click)="navigateToLogin()">
+          Entrar
+        </button>
+      </ng-template>
+    </div>
+
+  </div>
+</nav>

@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { LucideAngularModule, ArrowLeft } from 'lucide-angular'; // Ícone de voltar
-import { AuthService } from '../../services/auth.services';
+import { LucideAngularModule, ArrowLeft } from 'lucide-angular';
+import { AuthService, LoginRequest } from '../../services/auth.services';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ import { AuthService } from '../../services/auth.services';
     CommonModule,
     FormsModule,
     RouterLink,
-    LucideAngularModule // Módulo para usar os ícones
+    LucideAngularModule
   ],
   templateUrl: './login.html',
   styleUrls: ['./login.css']
@@ -20,18 +20,20 @@ import { AuthService } from '../../services/auth.services';
 export class LoginComponent {
   email = '';
   password = '';
-
-  // Expõe o ícone para o template HTML
   lucideArrowLeft = ArrowLeft;
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  handleGoogleSignIn(): void {
-    this.authService.signIn();
-  }
-
   handleEmailLogin(): void {
-    console.log('Tentativa de login com:', { email: this.email, password: this.password });
-    alert('Funcionalidade de login com email/senha a ser implementada.');
+    const loginData: LoginRequest = { email: this.email, senha: this.password };
+    this.authService.login(loginData).subscribe({
+      next: () => {
+        this.router.navigate(['/catalogo']);
+      },
+      error: (err) => {
+        alert('Email ou senha inválidos.');
+        console.error(err);
+      }
+    });
   }
 }

@@ -3,7 +3,7 @@
 }
 
 .login-container {
-  position: relative; /* Contexto para o botão de voltar */
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;

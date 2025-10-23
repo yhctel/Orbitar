@@ -4,10 +4,10 @@
 }
 
 .footer-container {
-  background-color: #212529; /* Cor de fundo escura */
-  color: #adb5bd; /* Cor do texto suave */
+  background-color: #212529;
+  color: #adb5bd;
   padding: 48px 50px;
-  font-family: 'Bricolage Grotesque', sans-serif; /* Use a fonte do seu projeto */
+  font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 .footer-content {
@@ -25,11 +25,11 @@
 
 .footer-column {
   flex: 1;
-  min-width: 220px; /* Garante que as colunas não fiquem muito espremidas */
+  min-width: 220px;
 }
 
 .footer-column h4 {
-  color: #fff; /* Títulos em branco */
+  color: #fff;
   font-weight: 600;
   margin-bottom: 1rem;
 }

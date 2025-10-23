@@ -9,15 +9,14 @@ import { LucideAngularModule, Leaf, Heart, Recycle, Users } from 'lucide-angular
   imports: [
     CommonModule,
     RouterLink,
-    LucideAngularModule // 2. Adicione o módulo aos imports
+    LucideAngularModule
   ],
   templateUrl: './footer.html',
   styleUrls: ['./footer.css']
 })
 export class FooterComponent {
-  // 3. Exponha os ícones para o template
   lucideRecycle = Recycle;
   lucideLeaf = Leaf;
   lucideHeart = Heart;
-  lucideUsers = Users; // Usando Users para Impacto Social
+  lucideUsers = Users;
 }

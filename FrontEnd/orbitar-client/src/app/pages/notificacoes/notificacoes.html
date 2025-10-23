@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<div class="page-container">
+  <header class="page-header">
+    <h1>Minhas Notificações</h1>
+    <button (click)="marcarTodasComoLidas()" class="btn-mark-all">Marcar todas como lidas</button>
+  </header>
+
+  <div class="notifications-list-container" *ngIf="notificacoes$ | async as notificacoes; else loading">
+    <div *ngIf="notificacoes.length > 0; else emptyState" class="notifications-list">
+      <div *ngFor="let n of notificacoes" class="notification-item" [ngClass]="{'unread': !n.lida}" (click)="handleNotificationClick(n)">
+        <div class="notification-content">
+          <p>{{ n.mensagem }}</p>
+          <span class="notification-time">
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #emptyState>
+      <div class="empty-state">
+        <lucide-icon [name]="lucideBellOff" size="48"></lucide-icon>
+        <h2>Nenhuma notificação</h2>
+        <p>Você não tem nenhuma notificação no momento.</p>
+      </div>
+    </ng-template>
+  </div>
+
+  <ng-template #loading>
+    <p>Carregando notificações...</p>
+  </ng-template>
+</div>

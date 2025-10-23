@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+
+<main class="page-container">
+  <header class="page-header">
+    <h1>Catálogo de Produtos</h1>
+    <p>Produtos disponíveis na sua cidade:</p>
+  </header>
+
+  <section class="filters-section">
+    <div class="filter-header">
+      <lucide-icon [name]="lucideFilter" size="16"></lucide-icon>
+      <span>Filtros</span>
+    </div>
+    <div class="filter-controls">
+      <div class="filter-group">
+        <label for="categoria">Categoria</label>
+        <select id="categoria" [(ngModel)]="filtroCategoria">
+          <option *ngFor="let cat of categorias" [value]="cat">{{ cat }}</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="estado">Estado de Conservação</label>
+        <select id="estado" [(ngModel)]="filtroEstado">
+          <option *ngFor="let est of estados" [value]="est">{{ est }}</option>
+        </select>
+      </div>
+      <button class="btn-buscar" (click)="buscar()">Buscar</button>
+    </div>
+  </section>
+
+  <section class="products-section">
+    <div *ngIf="loading$ | async" class="loading-state">
+      <div class="spinner"></div>
+    </div>
+
+    <ng-container *ngIf="!(loading$ | async)">
+      <div *ngIf="(produtos$ | async)?.length === 0" class="empty-state">
+        <lucide-icon [name]="lucideAlertCircle" size="64"></lucide-icon>
+        <h3>Nenhum produto encontrado</h3>
+        <p>Não há produtos disponíveis com os filtros selecionados.</p>
+      </div>
+
+      <div *ngIf="(produtos$ | async) as produtos" class="products-grid">
+        <app-produto-card
+          *ngFor="let produto of produtos"
+          [produto]="produto"
+          (reservar)="handleReservar($event)">
+        </app-produto-card>
+      </div>
+    </ng-container>
+  </section>
+</main>

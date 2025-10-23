@@ -1,5 +1,4 @@
 <div class="container">
-  <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-content">
       <div class="text-center">
@@ -14,14 +13,14 @@
         <div class="hero-buttons">
           <ng-container *ngIf="isAuthenticated; else guestActions">
             <a
-              routerLink="/produtos"
+              routerLink="/catalogo"
               class="btn btn-primary"
             >
               <lucide-icon [name]="lucideGift" [size]="20"></lucide-icon>
               <span>Ver Produtos</span>
             </a>
             <a
-              routerLink="/cadastrar-produto"
+              routerLink="/doar"
               class="btn btn-secondary"
             >
               <lucide-icon [name]="lucideHeart" [size]="20"></lucide-icon>
@@ -29,7 +28,6 @@
             </a>
           </ng-container>
           <ng-template #guestActions>
-            <!-- BOTÃO ATUALIZADO AQUI -->
             <a
               routerLink="/login"
               class="btn btn-primary"
@@ -43,9 +41,7 @@
     </div>
   </section>
 
-  <!-- Como Funciona -->
   <section class="how-it-works-section">
-    <!-- ... (Conteúdo desta seção permanece o mesmo) ... -->
     <div class="section-content">
       <div class="section-header">
         <h2 class="section-title">
@@ -90,9 +86,7 @@
     </div>
   </section>
 
-  <!-- Nossa Missão -->
   <section class="mission-section">
-    <!-- ... (Conteúdo desta seção permanece o mesmo) ... -->
     <div class="section-content">
       <div class="section-header">
         <h2 class="section-title">
@@ -137,7 +131,6 @@
     </div>
   </section>
 
-  <!-- Call to Action -->
   <section class="cta-section">
     <div class="section-content text-center">
       <h2 class="cta-title">
@@ -148,7 +141,6 @@
       </p>
 
       <ng-container>
-         <!-- BOTÃO ATUALIZADO AQUI -->
         <a
           routerLink="/login"
           class="btn btn-cta"

@@ -1,0 +1,62 @@
+.page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.page-header h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+.btn-mark-all {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-weight: 500;
+  cursor: pointer;
+}
+.notifications-list-container {
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+.notification-item {
+  display: flex;
+  padding: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.notification-item:last-child {
+  border-bottom: none;
+}
+.notification-item:hover {
+  background-color: #f9fafb;
+}
+.notification-item.unread {
+  background-color: #eff6ff;
+}
+.notification-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #111827;
+}
+.notification-time {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+.empty-state {
+  text-align: center;
+  padding: 4rem;
+  color: #6b7280;
+}
+.empty-state h2 {
+  font-size: 1.25rem;
+  margin: 1rem 0 0.5rem;
+}

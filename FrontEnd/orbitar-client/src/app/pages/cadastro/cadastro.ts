@@ -2,22 +2,25 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+import { NavbarComponent } from '../../shared/navbar/navbar';
+import { AuthService, CadastroRequest } from '../../services/auth.services';
+import { IbgeService } from '../../services/ibge';
 import { LucideAngularModule, Eye, EyeOff, ArrowLeft } from 'lucide-angular';
-import { IbgeService } from './../../services/ibge';
 
 @Component({
-  selector: 'app-cadastro',
+  selector: 'app-cadastrro',
   standalone: true,
   imports: [
     CommonModule,
     FormsModule,
     RouterLink,
-    LucideAngularModule // Módulo para ícones
-  ],
+    LucideAngularModule
+],
   templateUrl: './cadastro.html',
   styleUrls: ['./cadastro.css']
 })
 export class CadastroComponent implements OnInit {
+  loading = false;
   nome = '';
   email = '';
   senha = '';
@@ -32,9 +35,13 @@ export class CadastroComponent implements OnInit {
 
   lucideEye = Eye;
   lucideEyeOff = EyeOff;
-  lucideArrowLeft = ArrowLeft; // Ícone de voltar
+  lucideArrowLeft = ArrowLeft;
 
-  constructor(private router: Router, private ibgeService: IbgeService) {}
+  constructor(
+    private authService: AuthService,
+    private ibgeService: IbgeService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.carregarCidades();
@@ -42,16 +49,9 @@ export class CadastroComponent implements OnInit {
 
   carregarCidades(): void {
     this.isLoadingCidades = true;
-    this.ibgeService.getCidades().subscribe({
-      next: (data) => {
-        this.cidades = data;
-        this.isLoadingCidades = false;
-      },
-      error: (err) => {
-        console.error('Erro ao carregar cidades', err);
-        this.isLoadingCidades = false;
-        alert('Não foi possível carregar a lista de cidades.');
-      }
+    this.ibgeService.getCidades().subscribe(data => {
+      this.cidades = data;
+      this.isLoadingCidades = false;
     });
   }
 
@@ -69,8 +69,26 @@ export class CadastroComponent implements OnInit {
       alert('As senhas não coincidem!');
       return;
     }
-    console.log('Registrando novo usuário...');
-    alert('Cadastro realizado com sucesso!');
-    this.router.navigate(['/login']);
+
+    this.loading = true;
+    const cadastroData: CadastroRequest = {
+      nome: this.nome,
+      email: this.email,
+      senha: this.senha,
+      cidade: this.cidade
+    };
+
+    this.authService.cadastro(cadastroData).subscribe({
+      next: () => {
+        this.loading = false;
+        alert('Cadastro realizado com sucesso! Faça o login.');
+        this.router.navigate(['/login']);
+      },
+      error: (err) => {
+        this.loading = false;
+        alert('Erro ao realizar o cadastro. Verifique os dados.');
+        console.error(err);
+      }
+    });
   }
 }

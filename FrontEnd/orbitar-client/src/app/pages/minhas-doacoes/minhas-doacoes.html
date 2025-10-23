@@ -1,0 +1,81 @@
+<app-navbar></app-navbar>
+<main class="page-container">
+  <header class="page-header">
+    <h1>Minhas Doações</h1>
+    <p>Gerencie seus produtos cadastrados para doação</p>
+  </header>
+  <section class="stats-grid" *ngIf="estatisticas$ | async as stats">
+    <div class="stat-card">
+      <lucide-icon [name]="lucidePackage" size="24" class="icon-total"></lucide-icon>
+      <div>
+        <div class="stat-value">{{ stats.total }}</div>
+        <div class="stat-label">Total</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <lucide-icon [name]="lucideGift" size="24" class="icon-disponivel"></lucide-icon>
+      <div>
+        <div class="stat-value">{{ stats.disponivel }}</div>
+        <div class="stat-label">Disponível</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <lucide-icon [name]="lucideClock" size="24" class="icon-reservado"></lucide-icon>
+      <div>
+        <div class="stat-value">{{ stats.reservado }}</div>
+        <div class="stat-label">Reservado</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <lucide-icon [name]="lucideCheckCircle" size="24" class="icon-doado"></lucide-icon>
+      <div>
+        <div class="stat-value">{{ stats.doado }}</div>
+        <div class="stat-label">Doado</div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div *ngIf="loading$ | async" class="loading-state">
+      <div class="spinner"></div>
+    </div>
+
+    <ng-container *ngIf="!(loading$ | async)">
+      <div *ngIf="(produtos$ | async)?.length === 0" class="empty-state">
+        <lucide-icon [name]="lucideAlertCircle" size="64"></lucide-icon>
+        <h3>Nenhum produto cadastrado</h3>
+        <p>Você ainda não cadastrou nenhum produto para doação.</p>
+        <a routerLink="/doar" class="btn-primary">Cadastrar Primeiro Produto</a>
+      </div>
+
+      <div *ngIf="(produtos$ | async) as produtos" class="products-grid">
+        <div *ngFor="let produto of produtos" class="product-wrapper">
+          <app-produto-card
+            [produto]="produto"
+            [isDoador]="true"
+            (editar)="handleEditar($event)"
+            (remover)="handleRemover($event)">
+          </app-produto-card>
+
+          <button *ngIf="produto.status === 'reservado'" class="btn-marcar-doado" (click)="handleMarcarComoDoado(produto._id)">
+            Marcar como Doado
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </section>
+</main>
+<div class="modal-overlay" *ngIf="mostrarModal">
+  <div class="modal-content">
+    <h2>Editar Produto</h2>
+    <form (ngSubmit)="handleSalvarEdicao()" *ngIf="editandoProduto">
+      <div class="form-group">
+        <label for="nome">Nome do produto</label>
+        <input type="text" id="nome" name="nome" [(ngModel)]="editandoProduto.nome" required>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Salvar Alterações</button>
+        <button type="button" class="btn-secondary" (click)="fecharModal()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
