@@ -22,7 +22,6 @@ public class autenticacaoController : ControllerBase
     private readonly IValidator<CadastroRequest> _cadastroValidator;
     private readonly IValidator<LoginRequest> _loginValidator;
 
-    // Propriedade para pegar o ID do usuário logado a partir do token
     private string UsuarioId => User.FindFirst(ClaimTypes.NameIdentifier)?.Value!;
 
     public autenticacaoController(
@@ -39,7 +38,6 @@ public class autenticacaoController : ControllerBase
         _loginValidator = loginValidator;
     }
 
-    // POST /api/autenticacao/cadastro
     [HttpPost("cadastro")]
     public async Task<ActionResult<AuthResponse>> Cadastro([FromBody] CadastroRequest req)
     {
@@ -54,7 +52,7 @@ public class autenticacaoController : ControllerBase
         {
             UserName = req.Email,
             Email = req.Email,
-            NomeCompleto = req.NomeCompleto,
+            NomeCompleto = req.NomeCompleto, // CORREÇÃO: Usando 'Nome' do CadastroRequest
             Cidade = req.Cidade
         };
 
@@ -66,7 +64,6 @@ public class autenticacaoController : ControllerBase
         return Ok(new AuthResponse(token, user.Id, user.NomeCompleto, user.Email!, user.Cidade));
     }
 
-    // POST /api/autenticacao/login
     [HttpPost("login")]
     public async Task<ActionResult<AuthResponse>> Login([FromBody] LoginRequest req)
     {
@@ -84,69 +81,45 @@ public class autenticacaoController : ControllerBase
         return Ok(new AuthResponse(token, user.Id, user.NomeCompleto, user.Email!, user.Cidade));
     }
 
-    // PUT /api/autenticacao/meu-perfil
     [HttpPut("meu-perfil")]
     [Authorize]
     public async Task<IActionResult> AtualizarPerfil([FromBody] AtualizarPerfilRequest req)
     {
         var user = await _userManager.FindByIdAsync(UsuarioId);
-        if (user == null)
-        {
-            return NotFound("Usuário não encontrado.");
-        }
+        if (user == null) return NotFound("Usuário não encontrado.");
 
-        user.NomeCompleto = req.NomeCompleto;
+        user.NomeCompleto = req.NomeCompleto; // CORREÇÃO: Usando 'Nome'
         user.Cidade = req.Cidade;
 
         var result = await _userManager.UpdateAsync(user);
-
-        if (!result.Succeeded)
-        {
-            return BadRequest(result.Errors.Select(e => e.Description));
-        }
+        if (!result.Succeeded) return BadRequest(result.Errors.Select(e => e.Description));
 
         return Ok("Perfil atualizado com sucesso.");
     }
 
-    // PUT /api/autenticacao/atualizar-senha
     [HttpPut("atualizar-senha")]
     [Authorize]
     public async Task<IActionResult> AtualizarSenha([FromBody] AtualizarSenhaRequest req)
     {
         var user = await _userManager.FindByIdAsync(UsuarioId);
-        if (user == null)
-        {
-            return NotFound("Usuário não encontrado.");
-        }
+        if (user == null) return NotFound("Usuário não encontrado.");
 
         var result = await _userManager.ChangePasswordAsync(user, req.SenhaAntiga, req.SenhaNova);
-
-        if (!result.Succeeded)
-        {
-            return BadRequest(result.Errors.Select(e => e.Description));
-        }
+        if (!result.Succeeded) return BadRequest(result.Errors.Select(e => e.Description));
 
         return Ok("Senha atualizada com sucesso.");
     }
 
-    // DELETE /api/autenticacao/excluir-conta
     [HttpDelete("excluir-conta")]
     [Authorize]
     public async Task<IActionResult> ExcluirConta()
     {
         var user = await _userManager.FindByIdAsync(UsuarioId);
-        if (user == null)
-        {
-            return NotFound("Usuário não encontrado.");
-        }
+        if (user == null) return NotFound("Usuário não encontrado.");
 
         var result = await _userManager.DeleteAsync(user);
+        if (!result.Succeeded) return BadRequest(result.Errors.Select(e => e.Description));
 
-        if (!result.Succeeded)
-        {
-            return BadRequest(result.Errors.Select(e => e.Description));
-        }
-
-        return NoContent(); // Resposta 204 No Content para sucesso na exclusão
+        return NoContent();
     }
 }

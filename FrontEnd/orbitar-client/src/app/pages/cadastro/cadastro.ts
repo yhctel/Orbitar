@@ -3,19 +3,20 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { NavbarComponent } from '../../shared/navbar/navbar';
-import { AuthService, CadastroRequest } from '../../services/auth.services';
+import { AuthService } from '../../services/auth.services'; // Removido CadastroRequest daqui
 import { IbgeService } from '../../services/ibge';
 import { LucideAngularModule, Eye, EyeOff, ArrowLeft } from 'lucide-angular';
 
 @Component({
-  selector: 'app-cadastrro',
+  selector: 'app-cadastro',
   standalone: true,
   imports: [
     CommonModule,
     FormsModule,
     RouterLink,
+    NavbarComponent,
     LucideAngularModule
-],
+  ],
   templateUrl: './cadastro.html',
   styleUrls: ['./cadastro.css']
 })
@@ -71,23 +72,35 @@ export class CadastroComponent implements OnInit {
     }
 
     this.loading = true;
-    const cadastroData: CadastroRequest = {
-      nome: this.nome,
-      email: this.email,
-      senha: this.senha,
-      cidade: this.cidade
+
+    // --- CORREÇÃO AQUI ---
+    // Objeto com propriedades em PascalCase para corresponder ao DTO do C#
+    const cadastroData: any = {
+      NomeCompleto: this.nome, // Usando NomeCompleto
+      Email: this.email,
+      Senha: this.senha,
+      Cidade: this.cidade
     };
 
     this.authService.cadastro(cadastroData).subscribe({
       next: () => {
         this.loading = false;
-        alert('Cadastro realizado com sucesso! Faça o login.');
+        alert('Cadastro realizado com sucesso! Por favor, faça o login.');
         this.router.navigate(['/login']);
       },
       error: (err) => {
         this.loading = false;
-        alert('Erro ao realizar o cadastro. Verifique os dados.');
-        console.error(err);
+        // Lógica aprimorada para exibir a mensagem de erro do back-end
+        let errorMsg = 'Erro ao realizar o cadastro. Tente novamente.';
+        if (err.error && Array.isArray(err.error)) {
+          // Se o back-end retornar uma lista de erros (como o FluentValidation faz)
+          errorMsg = err.error.join('\n');
+        } else if (typeof err.error === 'string') {
+          // Se for uma única string de erro
+          errorMsg = err.error;
+        }
+        alert(errorMsg);
+        console.error('Resposta de erro do back-end:', err);
       }
     });
   }

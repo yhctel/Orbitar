@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, of } from 'rxjs';
-import { delay, tap } from 'rxjs/operators';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 import { environment } from './../../environments/environments';
 
 export interface LoginRequest { email: string; senha: string; }
@@ -13,11 +14,14 @@ export interface PerfilUsuario { userId: string; nome: string; email: string; ci
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = `${environment.apiUrl}/autenticao`;
+  // --- CORREÇÃO AQUI ---
+  // Removido o "o" extra de "autotenticacao"
+  private apiUrl = `${environment.apiUrl}/autenticacao`;
+
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(!!localStorage.getItem('authToken'));
   public isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   login(loginData: LoginRequest): Observable<AuthResponse> {
     return this.http.post<AuthResponse>(`${this.apiUrl}/login`, loginData).pipe(
@@ -35,10 +39,7 @@ export class AuthService {
   signOut(): void {
     localStorage.removeItem('authToken');
     this.isAuthenticatedSubject.next(false);
-  }
-
-  signIn(email: string, senha: string): Observable<any> {
-    return this.login({ email, senha });
+    this.router.navigate(['/']);
   }
 
   checkInitialAuthStatus(): boolean {

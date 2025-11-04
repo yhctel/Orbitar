@@ -14,11 +14,22 @@ using Orbitar.Application.Mapping;
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
 
-// DB
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy =>
+                      {
+                          policy.WithOrigins("http://localhost:4200")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+                      });
+});
+
 builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseSqlServer(configuration.GetConnectionString("Default")));
 
-// Identity + JWT
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders()
@@ -42,14 +53,12 @@ builder.Services.AddAuthentication(options =>
         ValidIssuer = configuration["Jwt:Issuer"],
         ValidAudience = configuration["Jwt:Audience"],
         IssuerSigningKey = key,
-        // Adicionar ClockSkew pode ajudar se houver pequenas diferenças de tempo
         ClockSkew = TimeSpan.Zero
     };
 });
 
 builder.Services.AddAuthorization();
 
-//builder.Services.AddAutoMapper(typeof(MappingPerfil).Assembly);
 builder.Services.AddAutoMapper(cfg =>
 {
     cfg.AddProfile<MappingPerfil>();
@@ -59,14 +68,18 @@ builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
 builder.Services.AddScoped<IImagemArmazenamentoService, LocalImagemArmazenamentoService>();
 builder.Services.AddSingleton<IImagemModeracaoService, ImagemModeracaoService>();
 
-builder.Services.AddControllers();
+// --- CORREÇÃO AQUI ---
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = null;
+    });
 
-// Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Orbitar API", Version = "v1" });
- 
+
     var securityScheme = new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -90,9 +103,13 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles(); 
+app.UseStaticFiles();
+
+app.UseCors(MyAllowSpecificOrigins);
+
 app.UseAuthentication();
 app.UseAuthorization();
+
 app.MapControllers();
 
 app.Run();
