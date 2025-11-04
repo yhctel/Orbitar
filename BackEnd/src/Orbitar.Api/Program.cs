@@ -27,8 +27,10 @@ builder.Services.AddCors(options =>
                       });
 });
 
+// --- CORREÇÃO AQUI ---
+// O nome foi alterado de "Default" para "DefaultConnection"
 builder.Services.AddDbContext<AppDbContext>(opt =>
-    opt.UseSqlServer(configuration.GetConnectionString("Default")));
+    opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
@@ -68,7 +70,6 @@ builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
 builder.Services.AddScoped<IImagemArmazenamentoService, LocalImagemArmazenamentoService>();
 builder.Services.AddSingleton<IImagemModeracaoService, ImagemModeracaoService>();
 
-// --- CORREÇÃO AQUI ---
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {

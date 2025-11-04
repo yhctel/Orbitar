@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { Observable } from 'rxjs';
-import { LucideAngularModule, Gift, Home, Plus, Heart, User, LogOut, Bell } from 'lucide-angular';
-import { AuthService } from '../../services/auth.services';
-import { NotificationService, Notificacao } from '../../services/notification';
+import { LucideAngularModule, Gift, Home, Plus, Heart, User, LogOut, Bell, ClipboardList } from 'lucide-angular';
+import { AuthService, AuthResponse } from '../../services/auth.service';
+import { NotificationService, Notificacao } from '../../services/notification.service';
 
 @Component({
   selector: 'app-navbar',
-  standalone: true, // <-- ADICIONE ESTA LINHA!
+  standalone: true,
   imports: [
     CommonModule,
     RouterLink,
@@ -20,13 +20,12 @@ import { NotificationService, Notificacao } from '../../services/notification';
 })
 export class NavbarComponent implements OnInit {
   isAuthenticated$: Observable<boolean>;
-  userName = 'Letícia Lindberght';
+  userName = '';
 
   notificacoes$: Observable<Notificacao[]>;
   unreadCount$: Observable<number>;
   isDropdownOpen = false;
 
-  // Ícones
   lucideGift = Gift;
   lucideHome = Home;
   lucidePlus = Plus;
@@ -34,6 +33,7 @@ export class NavbarComponent implements OnInit {
   lucideUser = User;
   lucideLogOut = LogOut;
   lucideBell = Bell;
+  lucideClipboardList = ClipboardList;
 
   constructor(
     private authService: AuthService,
@@ -45,7 +45,17 @@ export class NavbarComponent implements OnInit {
     this.unreadCount$ = this.notificationService.unreadCount$;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isAuthenticated$.subscribe(isAuth => {
+      if (isAuth) {
+        const user = this.authService.getCurrentUser();
+        this.userName = user ? user.nomeCompleto : '';
+        this.notificationService.buscarNotificacoes();
+      } else {
+        this.userName = '';
+      }
+    });
+  }
 
   toggleDropdown(): void {
     this.isDropdownOpen = !this.isDropdownOpen;
@@ -66,6 +76,5 @@ export class NavbarComponent implements OnInit {
 
   signOut(): void {
     this.authService.signOut();
-    this.router.navigate(['/']);
   }
 }

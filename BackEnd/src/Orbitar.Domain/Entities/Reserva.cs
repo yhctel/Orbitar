@@ -12,4 +12,5 @@ public class Reserva
     public DateTime DataReserva { get; set; } = DateTime.UtcNow;
     public DateTime DataExpiracao { get; set; }
     public StatusReserva Status { get; set; } = StatusReserva.Ativa;
+    public DateTime DataCriacao { get; set; }
 }

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { Ibge } from './ibge';
+import { Ibge } from './ibge.service';
 
 describe('Ibge', () => {
   let service: Ibge;

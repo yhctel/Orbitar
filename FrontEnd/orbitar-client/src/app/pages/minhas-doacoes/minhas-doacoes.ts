@@ -5,8 +5,8 @@ import { Router, RouterLink } from '@angular/router';
 import { Observable, map } from 'rxjs';
 import { NavbarComponent } from '../../shared/navbar/navbar';
 import { ProdutoCardComponent } from '../../shared/produto-card/produto-card';
-import { Produto, ProdutoService } from '../../services/produto';
-import { AuthService } from '../../services/auth.services';
+import { Produto, ProdutoService } from '../../services/produto.service';
+// --- CORREÇÃO: Importar os ícones necessários ---
 import { LucideAngularModule, Gift, Package, Clock, CheckCircle, AlertCircle } from 'lucide-angular';
 
 interface Estatisticas {
@@ -31,8 +31,7 @@ export class MinhasDoacoesComponent implements OnInit {
   mostrarModal = false;
   editandoProduto: Produto | null = null;
 
-  mockUserId = 'mockUserId123';
-
+  // --- CORREÇÃO: Definir as propriedades para os ícones ---
   lucideGift = Gift;
   lucidePackage = Package;
   lucideClock = Clock;
@@ -46,15 +45,15 @@ export class MinhasDoacoesComponent implements OnInit {
     this.estatisticas$ = this.produtos$.pipe(
       map(produtos => ({
         total: produtos.length,
-        disponivel: produtos.filter(p => p.status === 'disponivel').length,
-        reservado: produtos.filter(p => p.status === 'reservado').length,
-        doado: produtos.filter(p => p.status === 'doado').length,
+        disponivel: produtos.filter(p => p.status === 0).length,
+        reservado: produtos.filter(p => p.status === 1).length,
+        doado: produtos.filter(p => p.status === 2).length,
       }))
     );
   }
 
   ngOnInit(): void {
-    this.produtoService.buscarProdutosPorDoador(this.mockUserId);
+    this.produtoService.buscarProdutosPorDoador().subscribe();
   }
 
   handleEditar(produto: Produto): void {
@@ -63,19 +62,20 @@ export class MinhasDoacoesComponent implements OnInit {
   }
 
   handleRemover(produtoId: string): void {
-    if (confirm('Tem certeza?')) {
-      this.produtoService.removerProduto(produtoId).subscribe();
+    if (confirm('Tem certeza que deseja remover este produto?')) {
+      this.produtoService.removerProduto(produtoId).subscribe(() => this.ngOnInit());
     }
   }
 
   handleMarcarComoDoado(produtoId: string): void {
-    this.produtoService.atualizarProduto(produtoId, { status: 'doado' }).subscribe();
+    this.produtoService.atualizarProduto(produtoId, { status: 2 }).subscribe(() => this.ngOnInit());
   }
 
   handleSalvarEdicao(): void {
     if (!this.editandoProduto) return;
-    this.produtoService.atualizarProduto(this.editandoProduto._id, this.editandoProduto).subscribe(() => {
+    this.produtoService.atualizarProduto(this.editandoProduto.id, this.editandoProduto).subscribe(() => {
       this.fecharModal();
+      this.ngOnInit();
     });
   }
 

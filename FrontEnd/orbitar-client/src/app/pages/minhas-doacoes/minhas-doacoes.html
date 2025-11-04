@@ -56,7 +56,8 @@
             (remover)="handleRemover($event)">
           </app-produto-card>
 
-          <button *ngIf="produto.status === 'reservado'" class="btn-marcar-doado" (click)="handleMarcarComoDoado(produto._id)">
+          <!-- CORREÇÕES APLICADAS AQUI -->
+          <button *ngIf="produto.status === 1" class="btn-marcar-doado" (click)="handleMarcarComoDoado(produto.id)">
             Marcar como Doado
           </button>
         </div>

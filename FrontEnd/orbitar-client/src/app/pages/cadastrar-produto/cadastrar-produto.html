@@ -15,7 +15,6 @@
 
       <div class="form-group">
         <label for="imagem">Imagem do Produto</label>
-
         <div *ngIf="!imagePreview; else previewTpl">
           <label for="fileInput" class="file-input-container">
             <lucide-icon [name]="lucideUpload" size="40" class="upload-icon"></lucide-icon>
@@ -24,7 +23,6 @@
           </label>
           <input type="file" id="fileInput" class="file-input-hidden" (change)="onFileSelected($event)" accept="image/*">
         </div>
-
         <ng-template #previewTpl>
           <div class="image-preview-container">
             <img [src]="imagePreview" alt="Pré-visualização da imagem" class="preview-image">
@@ -33,9 +31,6 @@
             </button>
           </div>
         </ng-template>
-      </div>
-
-      <div class="form-row">
       </div>
 
        <div class="form-row">
@@ -48,7 +43,8 @@
         </div>
         <div class="form-group">
           <label for="estado">Estado de Conservação *</label>
-          <select id="estado" name="estadoConservacao" [(ngModel)]="formData.estadoConservacao" required>
+          <!-- CORREÇÃO 1: O ngModel foi alterado de 'estadoConservacao' para 'condicao' -->
+          <select id="estado" name="condicao" [(ngModel)]="formData.condicao" required>
             <option value="" disabled>Selecione o estado</option>
             <option *ngFor="let est of estados" [value]="est.value">{{ est.label }}</option>
           </select>
@@ -65,11 +61,7 @@
         <small>Informe um local público e seguro para a entrega</small>
       </div>
 
-      <div class="form-group">
-        <label for="cidade">Cidade</label>
-        <input type="text" id="cidade" name="cidade" [(ngModel)]="formData.cidade" [readonly]="true">
-        <small>Baseado no seu perfil de usuário</small>
-      </div>
+      <!-- CORREÇÃO 2: O campo 'Cidade' foi removido -->
     </div>
 
     <div class="form-actions">

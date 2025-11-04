@@ -1,43 +1,43 @@
 <div class="card-container" *ngIf="produto">
   <div class="image-wrapper">
-    <img [src]="produto.imagem || 'assets/images/placeholder.jpg'" [alt]="produto.nome">
+    <img [src]="produto.imagemUrl || 'assets/images/placeholder.jpg'" [alt]="produto.nome">
+
     <span class="status-badge" [ngClass]="'status-' + produto.status">
-      {{ produto.status | titlecase }}
+      {{ produto.status === 0 ? 'Disponível' : (produto.status === 1 ? 'Reservado' : 'Doado') }}
     </span>
   </div>
 
   <div class="content-wrapper">
-
     <h3>{{ produto.nome }}</h3>
 
     <div class="details-list">
       <div class="detail-item">
         <lucide-icon [name]="lucidePackage" size="14"></lucide-icon>
-        <span>{{ produto.categoria }} • {{ produto.estadoConservacao }}</span>
+        <span>Condição: {{ produto.condicao === 0 ? 'Bom Estado' : (produto.condicao === 1 ? 'Seminovo' : 'Com Defeito') }}</span>
       </div>
       <div class="detail-item">
         <lucide-icon [name]="lucideMapPin" size="14"></lucide-icon>
         <span>{{ produto.cidade }}</span>
       </div>
+
       <div class="detail-item">
-        <lucide-icon [name]="lucideClock" size="14"></lucide-icon>
-        <span>há 9 meses</span>
+        <lucide-icon [name]="lucideUser" size="14"></lucide-icon>
+        <span>Doador: {{ produto.dono.nomeCompleto }}</span>
       </div>
     </div>
 
     <p class="observations">{{ produto.observacoes }}</p>
-
     <div class="delivery-info">
-      <lucide-icon [name]="lucideUser" size="12"></lucide-icon>
-      <span>Entrega: {{ produto.enderecoEntrega }}</span>
+      <p><strong>Local de Entrega:</strong> {{ produto.enderecoEntrega }}</p>
     </div>
+
     <div class="card-actions">
       <ng-container *ngIf="isDoador">
         <button class="btn btn-editar" (click)="onEditarClick()">Editar</button>
         <button class="btn btn-remover" (click)="onRemoverClick()">Remover</button>
       </ng-container>
 
-      <ng-container *ngIf="!isDoador && produto.status === 'disponivel'">
+      <ng-container *ngIf="!isDoador && produto.status === 0">
         <button class="btn btn-reservar" (click)="onReservarClick()">
           Reservar Produto
         </button>

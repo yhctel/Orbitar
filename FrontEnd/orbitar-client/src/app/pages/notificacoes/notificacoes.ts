@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, /*RouterLink*/ } from '@angular/router';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { NavbarComponent } from '../../shared/navbar/navbar';
-import { NotificationService, Notificacao } from '../../services/notification';
+import { NotificationService, Notificacao } from '../../services/notification.service';
 import { LucideAngularModule, BellOff } from 'lucide-angular';
 
 @Component({
@@ -11,14 +11,13 @@ import { LucideAngularModule, BellOff } from 'lucide-angular';
   standalone: true,
   imports: [
     CommonModule,
-    //RouterLink,
     NavbarComponent,
     LucideAngularModule
   ],
   templateUrl: './notificacoes.html',
   styleUrls: ['./notificacoes.css']
 })
-export class NotificacoesComponent {
+export class NotificacoesComponent implements OnInit {
 
   notificacoes$: Observable<Notificacao[]>;
   lucideBellOff = BellOff;
@@ -28,6 +27,10 @@ export class NotificacoesComponent {
     private router: Router
   ) {
     this.notificacoes$ = this.notificationService.notificacoes$;
+  }
+
+  ngOnInit(): void {
+    this.notificationService.buscarNotificacoes();
   }
 
   handleNotificationClick(notificacao: Notificacao): void {

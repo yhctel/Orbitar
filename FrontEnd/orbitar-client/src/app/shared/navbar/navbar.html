@@ -25,17 +25,39 @@
             <lucide-icon [name]="lucideHeart" size="16"></lucide-icon>
             <span>Minhas Doações</span>
           </a>
+          <a routerLink="/reservas" routerLinkActive="active">
+            <lucide-icon [name]="lucideClipboardList" size="16"></lucide-icon>
+            <span>Minhas Reservas</span>
+          </a>
         </div>
-        
+
         <div class="navbar-user">
           <div class="notification-wrapper">
             <button (click)="toggleDropdown()" class="notification-button" aria-label="Abrir notificações">
               <lucide-icon [name]="lucideBell" size="20"></lucide-icon>
               <span *ngIf="(unreadCount$ | async) as count" [hidden]="count === 0" class="notification-badge">{{ count }}</span>
             </button>
+
             <div class="notification-dropdown" *ngIf="isDropdownOpen">
+              <div class="dropdown-header">Notificações</div>
+              <ng-container *ngIf="notificacoes$ | async as notificacoes">
+                <ul class="notification-list">
+                  <ng-container *ngIf="notificacoes.length > 0; else noNotifications">
+                    <li *ngFor="let notificacao of notificacoes" (click)="handleNotificationClick(notificacao)" [class.unread]="!notificacao.lida">
+                      {{ notificacao.mensagem }}
+                    </li>
+                  </ng-container>
+                  <ng-template #noNotifications>
+                    <li>Nenhuma notificação nova.</li>
+                  </ng-template>
+                </ul>
+              </ng-container>
+              <div class="dropdown-footer">
+                <a routerLink="/notificacoes">Ver todas</a>
+              </div>
             </div>
           </div>
+
           <a routerLink="/perfil" class="user-info">
             <lucide-icon [name]="lucideUser" size="16"></lucide-icon>
             <span>{{ userName }}</span>

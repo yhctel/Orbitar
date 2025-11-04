@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { NavbarComponent } from '../../shared/navbar/navbar';
-import { AuthService } from '../../services/auth.services'; // Removido CadastroRequest daqui
-import { IbgeService } from '../../services/ibge';
+import { AuthService } from '../../services/auth.service'; // Removido CadastroRequest daqui
+import { IbgeService } from '../../services/ibge.service';
 import { LucideAngularModule, Eye, EyeOff, ArrowLeft } from 'lucide-angular';
 
 @Component({
@@ -14,7 +13,6 @@ import { LucideAngularModule, Eye, EyeOff, ArrowLeft } from 'lucide-angular';
     CommonModule,
     FormsModule,
     RouterLink,
-    NavbarComponent,
     LucideAngularModule
   ],
   templateUrl: './cadastro.html',
@@ -73,10 +71,8 @@ export class CadastroComponent implements OnInit {
 
     this.loading = true;
 
-    // --- CORREÇÃO AQUI ---
-    // Objeto com propriedades em PascalCase para corresponder ao DTO do C#
     const cadastroData: any = {
-      NomeCompleto: this.nome, // Usando NomeCompleto
+      NomeCompleto: this.nome,
       Email: this.email,
       Senha: this.senha,
       Cidade: this.cidade
@@ -90,13 +86,10 @@ export class CadastroComponent implements OnInit {
       },
       error: (err) => {
         this.loading = false;
-        // Lógica aprimorada para exibir a mensagem de erro do back-end
         let errorMsg = 'Erro ao realizar o cadastro. Tente novamente.';
         if (err.error && Array.isArray(err.error)) {
-          // Se o back-end retornar uma lista de erros (como o FluentValidation faz)
           errorMsg = err.error.join('\n');
         } else if (typeof err.error === 'string') {
-          // Se for uma única string de erro
           errorMsg = err.error;
         }
         alert(errorMsg);

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CatalogoComponent } from './catalogo';
+import { AuthGuard } from './auth.guard';
 
-describe('Catalogo', () => {
-  let component: CatalogoComponent;
-  let fixture: ComponentFixture<CatalogoComponent>;
+describe('AuthGuard', () => {
+  let component: AuthGuard;
+  let fixture: ComponentFixture<AuthGuard>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CatalogoComponent]
+      imports: [AuthGuard]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CatalogoComponent);
+    fixture = TestBed.createComponent(AuthGuard);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

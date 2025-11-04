@@ -1,0 +1,57 @@
+<app-navbar></app-navbar>
+<main class="page-container">
+  <header class="page-header">
+    <h1>Minhas Reservas</h1>
+    <p>Acompanhe os produtos que você reservou e as reservas feitas em seus itens.</p>
+  </header>
+  <section class="reservas-section">
+    <h2>Produtos que eu reservei</h2>
+    <ng-container *ngIf="minhasReservas$ | async as reservas; else loading">
+      <div *ngIf="reservas.length > 0; else emptyMinhasReservas" class="reservas-list">
+        <div *ngFor="let reserva of reservas" class="reserva-card">
+          <img [src]="reserva.produtoImagemUrl || 'assets/images/placeholder.jpg'" alt="{{ reserva.produtoNome }}">
+          <div class="reserva-details">
+            <h3>{{ reserva.produtoNome }}</h3>
+            <p><lucide-icon [name]="lucideUser" size="14"></lucide-icon> Doador: {{ reserva.donoNome }}</p>
+            <span class="status-badge status-{{reserva.status}}">{{ getStatusTexto(reserva.status) }}</span>
+          </div>
+          <div class="reserva-actions">
+            <button *ngIf="reserva.status === 0" (click)="onCancelarReserva(reserva.id)" class="btn-cancelar">
+              Cancelar Reserva
+            </button>
+          </div>
+        </div>
+      </div>
+      <ng-template #emptyMinhasReservas>
+        <div class="empty-state">
+          <lucide-icon [name]="lucideAlertCircle" size="48"></lucide-icon>
+          <p>Você ainda não reservou nenhum produto.</p>
+        </div>
+      </ng-template>
+    </ng-container>
+  </section>
+  <section class="reservas-section">
+    <h2>Reservas nos meus produtos</h2>
+    <ng-container *ngIf="reservasNosMeusProdutos$ | async as reservas; else loading">
+      <div *ngIf="reservas.length > 0; else emptyReservasNosMeusProdutos" class="reservas-list">
+        <div *ngFor="let reserva of reservas" class="reserva-card">
+          <div class="reserva-details">
+            <h3><lucide-icon [name]="lucidePackage" size="14"></lucide-icon> {{ reserva.produtoNome }}</h3>
+            <p><lucide-icon [name]="lucideUser" size="14"></lucide-icon> Reservado por: {{ reserva.receptorNome }}</p>
+            <span class="status-badge status-{{reserva.status}}">{{ getStatusTexto(reserva.status) }}</span>
+          </div>
+        </div>
+      </div>
+      <ng-template #emptyReservasNosMeusProdutos>
+        <div class="empty-state">
+          <lucide-icon [name]="lucideAlertCircle" size="48"></lucide-icon>
+          <p>Nenhum dos seus produtos foi reservado ainda.</p>
+        </div>
+      </ng-template>
+    </ng-container>
+  </section>
+
+  <ng-template #loading>
+    <div class="loading-state">Carregando reservas...</div>
+  </ng-template>
+</main>

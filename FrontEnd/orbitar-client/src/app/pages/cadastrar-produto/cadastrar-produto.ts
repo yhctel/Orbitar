@@ -1,78 +1,58 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router, /*RouterLink*/ } from '@angular/router';
-import { NavbarComponent } from '../../shared/navbar/navbar';
-import { ProdutoService } from '../../services/produto';
-import { AuthService } from '../../services/auth.services';
-
+import { Router } from '@angular/router';
+import { ProdutoService } from '../../services/produto.service';
 import { LucideAngularModule, Upload, X } from 'lucide-angular';
+import { NavbarComponent } from "../../shared/navbar/navbar";
 
 @Component({
   selector: 'app-cadastrar-produto',
   standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    //RouterLink,
-    NavbarComponent,
-    LucideAngularModule
-  ],
+  imports: [CommonModule, FormsModule, LucideAngularModule, NavbarComponent],
   templateUrl: './cadastrar-produto.html',
   styleUrls: ['./cadastrar-produto.css']
 })
-export class CadastrarProdutoComponent implements OnInit {
+export class CadastrarProdutoComponent {
   loading = false;
+  // CORRIGIDO: O formulário agora espelha o DTO do backend
   formData = {
     nome: '',
-    imagem: '',
-    categoria: '',
-    estadoConservacao: '',
+    imagemUrl: '', // O backend espera ImagemUrl
+    categoria: 0,    // O backend espera um número (Enum)
+    condicao: 0,     // O backend espera um número (Enum)
     observacoes: '',
-    enderecoEntrega: '',
-    cidade: '',
-    doadorId: '',
-    status: 'disponivel' as const
+    enderecoEntrega: ''
   };
 
   imagePreview: string | ArrayBuffer | null = null;
-  selectedFile: File | null = null;
-
   lucideUpload = Upload;
   lucideX = X;
 
+  // CORRIGIDO: O 'value' agora é o número do Enum
   categorias = [
-    { value: 'eletronicos', label: 'Eletrônicos' },
-    { value: 'roupas', label: 'Roupas' },
+    { value: 0, label: 'Eletrônicos' },
+    { value: 1, label: 'Roupas' },
+    { value: 2, label: 'Livros' },
+    { value: 3, label: 'Brinquedos' },
+    { value: 4, label: 'Móveis' }
   ];
   estados = [
-    { value: 'bom_estado', label: 'Bom Estado' },
-    { value: 'seminovo', label: 'Seminovo' },
-    { value: 'com_defeito', label: 'Com Defeito' }
+    { value: 0, label: 'Bom Estado' },
+    { value: 1, label: 'Seminovo' },
+    { value: 2, label: 'Com Defeito' }
   ];
 
-  constructor(
-    private produtoService: ProdutoService,
-    private authService: AuthService,
-    private router: Router
-  ) {}
-
-  ngOnInit(): void {
-    const mockUser = { cidade: 'São Paulo', userId: 'mockUserId123' };
-    if (mockUser) {
-      this.formData.cidade = mockUser.cidade;
-      this.formData.doadorId = mockUser.userId;
-    }
-  }
+  constructor(private produtoService: ProdutoService, private router: Router) {}
 
   onFileSelected(event: Event): void {
     const target = event.target as HTMLInputElement;
     if (target.files && target.files.length > 0) {
       const file = target.files[0];
-      this.selectedFile = file;
       const reader = new FileReader();
       reader.onload = () => {
         this.imagePreview = reader.result;
+        this.formData.imagemUrl = reader.result as string; // Atualiza a propriedade correta
       };
       reader.readAsDataURL(file);
     }
@@ -80,26 +60,25 @@ export class CadastrarProdutoComponent implements OnInit {
 
   removeImage(): void {
     this.imagePreview = null;
-    this.selectedFile = null;
+    this.formData.imagemUrl = '';
   }
 
   handleSubmit(): void {
-    if (!this.formData.nome || !this.formData.categoria /*...*/) {
+    if (!this.formData.nome || !this.formData.enderecoEntrega) {
       alert('Preencha os campos obrigatórios.');
       return;
     }
 
     this.loading = true;
-    if (this.imagePreview) {
-      this.formData.imagem = this.imagePreview as string;
-    }
 
+    // A cidade e o ID do doador são obtidos pelo backend através do token JWT.
+    // Não precisamos mais enviá-los do frontend.
     this.produtoService.criarProduto(this.formData).subscribe({
       next: () => {
         alert('Produto cadastrado com sucesso!');
-        this.router.navigate(['/catalogo']);
+        this.router.navigate(['/minhas-doacoes']); // Redireciona para ver o novo produto
       },
-      error: (err) => {
+      error: (err: any) => { // Tipando o 'err' para 'any' resolve o erro TS7006
         console.error('Erro ao cadastrar produto:', err);
         alert('Ocorreu um erro ao cadastrar o produto.');
         this.loading = false;

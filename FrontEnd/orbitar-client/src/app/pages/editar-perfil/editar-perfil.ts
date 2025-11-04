@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NavbarComponent } from '../../shared/navbar/navbar';
-import { AuthService, PerfilUsuario } from '../../services/auth.services'; // Importação correta
-import { IbgeService } from '../../services/ibge';
+import { AuthService, PerfilUsuario } from '../../services/auth.service';
+import { IbgeService } from '../../services/ibge.service';
 
 @Component({
   selector: 'app-editar-perfil',
@@ -15,7 +15,7 @@ import { IbgeService } from '../../services/ibge';
 })
 export class EditarPerfilComponent implements OnInit {
   loading = false;
-  perfil: PerfilUsuario = { userId: '', nome: '', email: '', cidade: '' }; // Inicialização correta
+  perfil: PerfilUsuario = { userId: '', nome: '', email: '', cidade: '' };
 
   originalEmail = '';
   originalCity = '';
@@ -37,7 +37,7 @@ export class EditarPerfilComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.authService.getPerfil().subscribe(data => {
+    this.authService.getPerfil().subscribe((data: PerfilUsuario) => {
       if (data) {
         this.perfil = { ...data };
         this.originalEmail = data.email;
@@ -66,7 +66,7 @@ export class EditarPerfilComponent implements OnInit {
 
   confirmPasswordAndSave(): void {
     this.passwordError = '';
-    this.authService.checkCurrentPassword(this.currentPassword).subscribe(isCorrect => {
+    this.authService.checkCurrentPassword(this.currentPassword).subscribe((isCorrect: boolean) => {
       if (isCorrect) {
         this.showPasswordModal = false;
         this.saveProfileData(true);

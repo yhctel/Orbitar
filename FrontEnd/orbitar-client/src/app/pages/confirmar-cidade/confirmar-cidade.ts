@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterLink } from '@angular/router';
-import { AuthService } from '../../services/auth.services';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-confirmar-cidade',
@@ -15,7 +15,8 @@ export class ConfirmarCidadeComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -25,6 +26,9 @@ export class ConfirmarCidadeComponent implements OnInit {
       this.authService.confirmCityChange(token).subscribe({
         next: () => {
           this.status = 'success';
+          setTimeout(() => {
+            this.router.navigate(['/editar-perfil']);
+          }, 3000);
         },
         error: () => {
           this.status = 'error';

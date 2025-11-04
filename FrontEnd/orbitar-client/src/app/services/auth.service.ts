@@ -3,19 +3,36 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { environment } from './../../environments/environments';
+import { environment } from '../../environments/environments';
 
-export interface LoginRequest { email: string; senha: string; }
-export interface CadastroRequest { nome: string; email: string; senha: string; cidade: string; }
-export interface AuthResponse { token: string; }
-export interface PerfilUsuario { userId: string; nome: string; email: string; cidade: string; telefone?: string; avatar?: string; biografia?: string; }
+// --- INTERFACES ---
+export interface LoginRequest { email: string; Senha: string; }
+export interface CadastroRequest { nomeCompleto: string; email: string; senha: string; cidade: string; }
+
+export interface AuthResponse {
+  token: string;
+  id: string;
+  nomeCompleto: string;
+  email: string;
+  cidade: string;
+}
+
+// --- NOVA INTERFACE ADICIONADA ---
+// Corresponde ao que a página de perfil precisa
+export interface PerfilUsuario {
+  userId: string;
+  nome: string;
+  email: string;
+  cidade: string;
+  telefone?: string;
+  avatar?: string;
+  biografia?: string;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  // --- CORREÇÃO AQUI ---
-  // Removido o "o" extra de "autotenticacao"
   private apiUrl = `${environment.apiUrl}/autenticacao`;
 
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(!!localStorage.getItem('authToken'));
@@ -27,31 +44,45 @@ export class AuthService {
     return this.http.post<AuthResponse>(`${this.apiUrl}/login`, loginData).pipe(
       tap(response => {
         localStorage.setItem('authToken', response.token);
+        localStorage.setItem('userData', JSON.stringify(response));
         this.isAuthenticatedSubject.next(true);
       })
     );
   }
 
-  cadastro(cadastroData: CadastroRequest): Observable<any> {
-    return this.http.post(`${this.apiUrl}/cadastro`, cadastroData);
+  cadastro(cadastroData: CadastroRequest): Observable<AuthResponse> {
+    return this.http.post<AuthResponse>(`${this.apiUrl}/cadastro`, cadastroData).pipe(
+      tap(response => {
+        localStorage.setItem('authToken', response.token);
+        localStorage.setItem('userData', JSON.stringify(response));
+        this.isAuthenticatedSubject.next(true);
+      })
+    );
   }
 
   signOut(): void {
     localStorage.removeItem('authToken');
+    localStorage.removeItem('userData');
     this.isAuthenticatedSubject.next(false);
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
   }
 
-  checkInitialAuthStatus(): boolean {
+  isLoggedIn(): boolean {
     return this.isAuthenticatedSubject.value;
   }
 
+  getCurrentUser(): AuthResponse | null {
+    const user = localStorage.getItem('userData');
+    return user ? JSON.parse(user) : null;
+  }
+
+
   getPerfil(): Observable<PerfilUsuario> {
-    return this.http.get<PerfilUsuario>(`${environment.apiUrl}/Perfil`);
+    return this.http.get<PerfilUsuario>(`${this.apiUrl}/meu-perfil`);
   }
 
   updatePerfil(perfilAtualizado: Partial<PerfilUsuario>): Observable<any> {
-    return this.http.put(`${environment.apiUrl}/Perfil`, perfilAtualizado);
+    return this.http.put(`${this.apiUrl}/meu-perfil`, perfilAtualizado);
   }
 
   checkCurrentPassword(password: string): Observable<boolean> {
@@ -66,8 +97,12 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}/solicitar-alteracao-senha`, { novaSenha: newPassword });
   }
 
-  confirmCityChange(token: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/confirmar-cidade`, { token });
+  confirmCityChange(token: string): Observable<AuthResponse> {
+    return this.http.post<AuthResponse>(`${this.apiUrl}/confirmar-cidade`, { token }).pipe(
+      tap(response => {
+        localStorage.setItem('userData', JSON.stringify(response));
+      })
+    );
   }
 
   confirmPasswordChange(token: string): Observable<any> {

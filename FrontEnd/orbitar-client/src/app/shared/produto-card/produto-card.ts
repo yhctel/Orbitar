@@ -1,7 +1,9 @@
+// Local: src/app/shared/produto-card/produto-card.ts
+
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule, MapPin, Clock, Package, User } from 'lucide-angular';
-import { Produto } from '../../services/produto';
+import { Produto } from '../../services/produto.service';
 
 @Component({
   selector: 'app-produto-card',
@@ -21,6 +23,7 @@ export class ProdutoCardComponent {
   @Output() editar = new EventEmitter<Produto>();
   @Output() remover = new EventEmitter<string>();
 
+  // Suas propriedades para os ícones (está perfeito!)
   lucideMapPin = MapPin;
   lucideClock = Clock;
   lucidePackage = Package;
@@ -35,6 +38,6 @@ export class ProdutoCardComponent {
   }
 
   onRemoverClick(): void {
-    this.remover.emit(this.produto._id);
+    this.remover.emit(this.produto.id);
   }
 }

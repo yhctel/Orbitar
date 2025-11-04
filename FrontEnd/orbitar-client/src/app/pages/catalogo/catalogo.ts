@@ -1,10 +1,12 @@
+// Local: src/app/pages/catalogo/catalogo.ts
+
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { NavbarComponent } from '../../shared/navbar/navbar';
 import { ProdutoCardComponent } from '../../shared/produto-card/produto-card';
-import { Produto, ProdutoService } from '../../services/produto';
+import { Produto, ProdutoService } from '../../services/produto.service';
 import { LucideAngularModule, Filter, AlertCircle } from 'lucide-angular';
 
 @Component({
@@ -44,10 +46,10 @@ export class CatalogoComponent implements OnInit {
   }
 
   handleReservar(produto: Produto): void {
-    this.produtoService.reservarProduto(produto._id).subscribe(success => {
+    this.produtoService.reservarProduto(produto.id).subscribe(success => {
       if (success) {
         alert(`Produto "${produto.nome}" reservado com sucesso!`);
-        this.buscar(); // Recarrega a lista para refletir a mudança de status
+        this.buscar();
       } else {
         alert('Falha ao reservar o produto.');
       }

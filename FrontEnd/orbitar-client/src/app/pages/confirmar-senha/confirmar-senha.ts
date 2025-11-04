@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterLink } from '@angular/router';
-import { AuthService } from '../../services/auth.services';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-confirmar-senha',
@@ -13,7 +13,11 @@ import { AuthService } from '../../services/auth.services';
 export class ConfirmarSenhaComponent implements OnInit {
   status: 'loading' | 'success' | 'error' = 'loading';
 
-  constructor(private route: ActivatedRoute, private authService: AuthService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     const token = this.route.snapshot.queryParamMap.get('token');
@@ -21,6 +25,10 @@ export class ConfirmarSenhaComponent implements OnInit {
       this.authService.confirmPasswordChange(token).subscribe({
         next: () => {
           this.status = 'success';
+          this.authService.signOut();
+          setTimeout(() => {
+            this.router.navigate(['/login']);
+          }, 4000);
         },
         error: () => {
           this.status = 'error';

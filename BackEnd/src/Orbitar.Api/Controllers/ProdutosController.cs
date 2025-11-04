@@ -1,5 +1,4 @@
-﻿// Local: Orbitar.Api/Controllers/ProdutosController.cs
-using AutoMapper;
+﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -36,7 +35,7 @@ public class ProdutosController : ControllerBase
         _userManager = userManager;
     }
 
-    // GET /api/produtos
+    // GET /api/produtos -> Já está perfeito
     [HttpGet]
     public async Task<ActionResult<PagedResult<ProdutoResponse>>> ObterTodos(
         [FromQuery] CategoriaProduto? categoria,
@@ -72,6 +71,56 @@ public class ProdutosController : ControllerBase
         return Ok(pagedResult);
     }
 
+    // --- NOVO MÉTODO ADICIONADO AQUI ---
+    // POST /api/produtos/{id}/reservar
+    [HttpPost("{id:guid}/reservar")]
+    public async Task<IActionResult> Reservar([FromRoute] Guid id)
+    {
+        var receptorId = UsuarioAtualId;
+        var produto = await _db.Produtos.FirstOrDefaultAsync(p => p.Id == id);
+
+        if (produto == null)
+        {
+            return NotFound("Produto não encontrado.");
+        }
+
+        if (produto.Status != StatusProduto.Disponivel)
+        {
+            return BadRequest("Este produto não está mais disponível para reserva.");
+        }
+
+        if (produto.DonoId == receptorId)
+        {
+            return BadRequest("Você não pode reservar seu próprio produto.");
+        }
+
+        var jaExisteReservaAtiva = await _db.Reservas
+            .AnyAsync(r => r.ProdutoId == id && r.Status == StatusReserva.Ativa);
+
+        if (jaExisteReservaAtiva)
+        {
+            return Conflict("Este produto já possui uma reserva ativa por outro usuário.");
+        }
+
+        var reserva = new Reserva
+        {
+            ProdutoId = id,
+            ReceptorId = receptorId,
+            Status = StatusReserva.Ativa,
+            DataCriacao = DateTime.UtcNow
+        };
+
+        // Atualiza o status do produto para refletir a reserva
+        produto.Status = StatusProduto.Reservado;
+
+        _db.Reservas.Add(reserva);
+        await _db.SaveChangesAsync();
+
+        return Ok(new { message = "Produto reservado com sucesso!" });
+    }
+
+    // Nenhum outro método abaixo precisa de alteração.
+    // ... (ObterMeus, ObterPorId, Criar, Atualizar, Excluir, MarcarComoDoado)
     // GET /api/produtos/meus
     [HttpGet("meus")]
     public async Task<ActionResult<List<ProdutoResponse>>> ObterMeus()

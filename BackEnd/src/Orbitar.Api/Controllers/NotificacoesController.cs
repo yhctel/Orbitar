@@ -25,5 +25,42 @@ public class NotificacoesController : ControllerBase
             .ToListAsync();
         return Ok(notificacoes);
     }
-    // Adicionar um método para marcar como lida depois...
+
+    [HttpPost("{id:guid}/marcar-lida")]
+    public async Task<IActionResult> MarcarComoLida(Guid id)
+    {
+        var notificacao = await _db.Notificacoes
+            .FirstOrDefaultAsync(n => n.Id == id && n.UsuarioId == UsuarioId);
+
+        if (notificacao == null)
+        {
+            return NotFound();
+        }
+
+        notificacao.Lida = true;
+        await _db.SaveChangesAsync();
+
+        return NoContent();
+    }
+
+    [HttpPost("marcar-todas-lidas")]
+    public async Task<IActionResult> MarcarTodasComoLidas()
+    {
+        var notificacoesNaoLidas = await _db.Notificacoes
+            .Where(n => n.UsuarioId == UsuarioId && !n.Lida)
+            .ToListAsync();
+
+        if (!notificacoesNaoLidas.Any())
+        {
+            return Ok();
+        }
+
+        foreach (var notificacao in notificacoesNaoLidas)
+        {
+            notificacao.Lida = true;
+        }
+
+        await _db.SaveChangesAsync();
+        return NoContent();
+    }
 }

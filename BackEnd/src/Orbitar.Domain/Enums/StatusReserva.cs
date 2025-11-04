@@ -6,5 +6,6 @@ public enum StatusReserva
     Concluida = 2,
     Expirada = 3,
     Cancelada = 4,
-    CanceladaPeloDoador = 5 
+    CanceladaPeloDoador = 5,
+    CanceladaPeloReceptor = 6
 }
