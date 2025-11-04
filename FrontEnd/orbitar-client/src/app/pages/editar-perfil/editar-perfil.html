@@ -1,83 +1,94 @@
 <app-navbar></app-navbar>
 
-<div class="page-container">
-  <form (ngSubmit)="handleSubmit()" class="form-card">
+<main class="page-container">
+  <div class="form-card">
     <header class="page-header">
       <h1>Editar Perfil</h1>
       <p>Atualize suas informações pessoais e de contato</p>
     </header>
 
-    <div class="form-grid">
+    <div *ngIf="loading" class="loading-state">
+      <p>Carregando seu perfil...</p>
+    </div>
+
+    <form (ngSubmit)="handleSubmit()" *ngIf="!loading && formData.userId">
       <div class="form-group">
         <label for="nome">Nome Completo *</label>
-        <input type="text" id="nome" name="nome" [(ngModel)]="perfil.nome" required>
+        <input type="text" id="nome" name="nome" [(ngModel)]="formData.nome" required>
       </div>
 
       <div class="form-group">
         <label for="email">Email *</label>
-        <input type="email" id="email" name="email" [(ngModel)]="perfil.email" required>
+        <input type="email" id="email" name="email" [(ngModel)]="formData.email" required>
         <small>Alterar o e-mail requer a confirmação da sua senha atual.</small>
       </div>
 
+
       <div class="form-group">
         <label for="cidade">Cidade *</label>
-        <select id="cidade" name="cidade" [(ngModel)]="perfil.cidade" required>
-          <option [value]="originalCity" disabled>{{ isLoadingCidades ? 'Carregando...' : 'Selecione a cidade' }}</option>
-          <option *ngFor="let c of cidades" [value]="c">{{ c }}</option>
+        <select id="cidade" name="cidade" [(ngModel)]="formData.cidade" required>
+          <option *ngIf="isLoadingCidades" disabled>Carregando cidades...</option>
+          <option *ngFor="let cidade of cidades" [value]="cidade">{{ cidade }}</option>
         </select>
         <small>Alterar a cidade requer confirmação por e-mail.</small>
       </div>
 
+
       <div class="form-group">
         <label for="telefone">Telefone (opcional)</label>
-        <input type="tel" id="telefone" name="telefone" [(ngModel)]="perfil.telefone">
+        <input type="tel" id="telefone" name="telefone" [(ngModel)]="formData.telefone">
       </div>
+
 
       <div class="form-group">
         <label for="biografia">Biografia (opcional)</label>
-        <textarea id="biografia" name="biografia" [(ngModel)]="perfil.biografia" rows="4"></textarea>
+        <textarea id="biografia" name="biografia" [(ngModel)]="formData.biografia" rows="4"></textarea>
       </div>
-    </div>
 
-    <div class="form-actions">
-      <button type="button" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
-      <button type="submit" class="btn btn-primary" [disabled]="loading">
-        {{ loading ? 'Salvando...' : 'Salvar Alterações' }}
-      </button>
-    </div>
-  </form>
 
-  <div class="form-card password-section">
-    <h2>Alterar Senha</h2>
-    <div class="form-group">
-      <label for="newPassword">Nova Senha</label>
-      <input type="password" id="newPassword" name="newPassword" [(ngModel)]="newPassword">
-    </div>
-    <br>
-    <div class="form-group">
-      <label for="confirmNewPassword">Confirmar Nova Senha</label>
-      <input type="password" id="confirmNewPassword" name="confirmNewPassword" [(ngModel)]="confirmNewPassword">
-    </div>
-    <div class="form-actions">
-      <button type="button" class="btn btn-primary" (click)="handlePasswordChange()">
-        Alterar Senha
-      </button>
-    </div>
+      <div class="form-actions">
+        <button type="button" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+        <button type="submit" class="btn btn-primary" [disabled]="loading">
+          {{ loading ? 'Salvando...' : 'Salvar Alterações' }}
+        </button>
+      </div>
+    </form>
   </div>
-</div>
+
+  <div class="form-card password-section" *ngIf="!loading && formData.userId">
+    <header class="page-header">
+      <h2>Alterar Senha</h2>
+      <p>Deixe os campos em branco se não desejar alterar sua senha.</p>
+    </header>
+
+    <form (ngSubmit)="handleSubmit()">
+        <div class="form-group">
+            <label for="newPassword">Nova Senha</label>
+            <input type="password" id="newPassword" name="newPassword" [(ngModel)]="newPassword" placeholder="••••••••">
+        </div>
+        <div class="form-group">
+            <label for="confirmNewPassword">Confirmar Nova Senha</label>
+            <input type="password" id="confirmNewPassword" name="confirmNewPassword" [(ngModel)]="confirmNewPassword" placeholder="••••••••">
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Atualizar Senha</button>
+        </div>
+    </form>
+  </div>
+</main>
 
 <div class="modal-overlay" *ngIf="showPasswordModal">
   <div class="modal-content">
-    <h2>Confirme sua Senha</h2>
-    <p>Para alterar seu e-mail, por favor, insira sua senha atual.</p>
+    <h2>Confirmar Senha</h2>
+    <p>Para alterar seu e-mail, por favor, digite sua senha atual.</p>
     <div class="form-group">
       <label for="currentPassword">Senha Atual</label>
-      <input type="password" id="currentPassword" name="currentPassword" [(ngModel)]="currentPassword">
+      <input type="password" id="currentPassword" name="currentPassword" [(ngModel)]="currentPassword" required>
       <small *ngIf="passwordError" class="error-text">{{ passwordError }}</small>
     </div>
     <div class="form-actions">
       <button type="button" class="btn btn-secondary" (click)="showPasswordModal = false">Cancelar</button>
-      <button type="button" class="btn btn-primary" (click)="confirmPasswordAndSave()">Confirmar</button>
+      <button type="button" class="btn btn-primary" (click)="confirmPasswordAndSave()">Confirmar e Salvar</button>
     </div>
   </div>
 </div>

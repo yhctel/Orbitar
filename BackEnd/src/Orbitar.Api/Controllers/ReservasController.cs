@@ -34,7 +34,7 @@ public class ReservasController : ControllerBase
             .Where(r => r.ReceptorId == uid)
             .Include(r => r.Produto)
                 .ThenInclude(p => p!.Dono!)
-            .OrderByDescending(r => r.DataCriacao)
+            .OrderByDescending(r => r.DataReserva)
             .Select(r => new MinhaReservaResponse
             {
                 Id = r.Id,
@@ -57,7 +57,8 @@ public class ReservasController : ControllerBase
             .Where(r => r.Produto!.DonoId == uid)
             .Include(r => r.Produto)
             .Include(r => r.Receptor)
-            .OrderByDescending(r => r.DataCriacao)
+            // --- CORREÇÃO APLICADA AQUI ---
+            .OrderByDescending(r => r.DataReserva)
             .Select(r => new ReservaNoMeuProdutoResponse
             {
                 Id = r.Id,
@@ -77,22 +78,14 @@ public class ReservasController : ControllerBase
         var uid = UsuarioId;
         var reserva = await _db.Reservas.Include(r => r.Produto).FirstOrDefaultAsync(r => r.Id == id);
         if (reserva == null) return NotFound();
-
         if (reserva.ReceptorId != uid) return Forbid();
         if (reserva.Status != StatusReserva.Ativa) return BadRequest("Apenas reservas ativas podem ser canceladas.");
-
         reserva.Status = StatusReserva.CanceladaPeloReceptor;
-
-        if (reserva.Produto != null)
-        {
-            reserva.Produto.Status = StatusProduto.Disponivel;
-        }
-
+        if (reserva.Produto != null) { reserva.Produto.Status = StatusProduto.Disponivel; }
         await _db.SaveChangesAsync();
         return NoContent();
     }
 }
-
 // --- DTOs ---
 
 public class MinhaReservaResponse

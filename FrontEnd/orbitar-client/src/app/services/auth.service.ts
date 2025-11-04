@@ -3,11 +3,19 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { environment } from '../../environments/environments';
+import { environment } from '../../environments/environment';
 
-// --- INTERFACES ---
-export interface LoginRequest { email: string; Senha: string; }
-export interface CadastroRequest { nomeCompleto: string; email: string; senha: string; cidade: string; }
+export interface LoginRequest {
+  email: string;
+  Senha: string;
+}
+
+export interface CadastroRequest {
+  nomeCompleto: string;
+  email: string;
+  senha: string;
+  cidade: string;
+}
 
 export interface AuthResponse {
   token: string;
@@ -17,8 +25,6 @@ export interface AuthResponse {
   cidade: string;
 }
 
-// --- NOVA INTERFACE ADICIONADA ---
-// Corresponde ao que a página de perfil precisa
 export interface PerfilUsuario {
   userId: string;
   nome: string;
@@ -29,12 +35,12 @@ export interface PerfilUsuario {
   biografia?: string;
 }
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private apiUrl = `${environment.apiUrl}/autenticacao`;
-
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(!!localStorage.getItem('authToken'));
   public isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
 
@@ -76,7 +82,6 @@ export class AuthService {
     return user ? JSON.parse(user) : null;
   }
 
-
   getPerfil(): Observable<PerfilUsuario> {
     return this.http.get<PerfilUsuario>(`${this.apiUrl}/meu-perfil`);
   }
@@ -88,7 +93,6 @@ export class AuthService {
   checkCurrentPassword(password: string): Observable<boolean> {
     return this.http.post<boolean>(`${this.apiUrl}/verificar-senha`, { senha: password });
   }
-
   requestCityChange(newCity: string): Observable<any> {
     return this.http.post(`${this.apiUrl}/solicitar-alteracao-cidade`, { novaCidade: newCity });
   }

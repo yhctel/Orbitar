@@ -14,8 +14,8 @@ import { IbgeService } from '../../services/ibge.service';
   styleUrls: ['./editar-perfil.css']
 })
 export class EditarPerfilComponent implements OnInit {
-  loading = false;
-  perfil: PerfilUsuario = { userId: '', nome: '', email: '', cidade: '' };
+  loading = true;
+  formData: PerfilUsuario = { userId: '', nome: '', email: '', cidade: '', telefone: '', biografia: '' };
 
   originalEmail = '';
   originalCity = '';
@@ -37,11 +37,25 @@ export class EditarPerfilComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.authService.getPerfil().subscribe((data: PerfilUsuario) => {
-      if (data) {
-        this.perfil = { ...data };
-        this.originalEmail = data.email;
-        this.originalCity = data.cidade;
+    this.authService.getPerfil().subscribe({
+      next: (data: PerfilUsuario) => {
+        if (data) {
+          this.formData = data;
+          this.originalEmail = data.email;
+          this.originalCity = data.cidade;
+        }
+        this.loading = false;
+      },
+
+      error: (err) => {
+        console.error('Falha ao buscar perfil:', err);
+        this.loading = false;
+        if (err.status === 401) {
+          alert('Sua sessão expirou. Por favor, faça login novamente.');
+          this.authService.signOut();
+        } else {
+          alert('Não foi possível carregar os dados do seu perfil.');
+        }
       }
     });
     this.carregarCidades();
@@ -56,7 +70,7 @@ export class EditarPerfilComponent implements OnInit {
   }
 
   handleSubmit(): void {
-    const emailHasChanged = this.perfil.email !== this.originalEmail;
+    const emailHasChanged = this.formData.email !== this.originalEmail;
     if (emailHasChanged) {
       this.showPasswordModal = true;
     } else {
@@ -78,35 +92,31 @@ export class EditarPerfilComponent implements OnInit {
 
   saveProfileData(saveEmail = false): void {
     this.loading = true;
-    const cityHasChanged = this.perfil.cidade !== this.originalCity;
-    const dataToSave: Partial<PerfilUsuario> = { ...this.perfil };
+    const cityHasChanged = this.formData.cidade !== this.originalCity;
+    const dataToSave: Partial<PerfilUsuario> = { ...this.formData };
+
     if (!saveEmail) {
       delete dataToSave.email;
     }
 
     if (cityHasChanged) {
-      this.authService.requestCityChange(this.perfil.cidade).subscribe(() => {
+      this.authService.requestCityChange(this.formData.cidade).subscribe(() => {
         alert('Para alterar a cidade, verifique seu e-mail e clique no link de confirmação.');
       });
       delete dataToSave.cidade;
     }
 
-    this.authService.updatePerfil(dataToSave).subscribe(() => {
-      this.loading = false;
-      alert('Perfil atualizado com sucesso!');
-      this.router.navigate(['/']);
-    });
-  }
-
-  handlePasswordChange(): void {
-    if (this.newPassword !== this.confirmNewPassword) {
-      alert('As novas senhas não coincidem.');
-      return;
-    }
-    this.authService.requestPasswordChange(this.newPassword).subscribe(() => {
-      alert('Para confirmar sua nova senha, verifique seu e-mail.');
-      this.newPassword = '';
-      this.confirmNewPassword = '';
+    this.authService.updatePerfil(dataToSave).subscribe({
+      next: () => {
+        this.loading = false;
+        alert('Perfil atualizado com sucesso!');
+        this.router.navigate(['/perfil']);
+      },
+      error: (err) => {
+        this.loading = false;
+        alert('Ocorreu um erro ao atualizar o perfil.');
+        console.error(err);
+      }
     });
   }
 

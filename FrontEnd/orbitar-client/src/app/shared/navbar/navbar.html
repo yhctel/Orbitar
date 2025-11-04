@@ -10,10 +10,12 @@
     <div class="nav-actions">
       <ng-container *ngIf="isAuthenticated$ | async; else loggedOutNav">
         <div class="navbar-links">
+
           <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <lucide-icon [name]="lucideHome" size="16"></lucide-icon>
             <span>Início</span>
           </a>
+
           <a routerLink="/catalogo" routerLinkActive="active">
             <span>Catálogo</span>
           </a>
@@ -25,7 +27,7 @@
             <lucide-icon [name]="lucideHeart" size="16"></lucide-icon>
             <span>Minhas Doações</span>
           </a>
-          <a routerLink="/reservas" routerLinkActive="active">
+          <a routerLink="/reserva" routerLinkActive="active">
             <lucide-icon [name]="lucideClipboardList" size="16"></lucide-icon>
             <span>Minhas Reservas</span>
           </a>
@@ -35,7 +37,8 @@
           <div class="notification-wrapper">
             <button (click)="toggleDropdown()" class="notification-button" aria-label="Abrir notificações">
               <lucide-icon [name]="lucideBell" size="20"></lucide-icon>
-              <span *ngIf="(unreadCount$ | async) as count" [hidden]="count === 0" class="notification-badge">{{ count }}</span>
+              <span *ngIf="(unreadCount$ | async) as count" [hidden]="count === 0" class="notification-badge">{{ count
+                }}</span>
             </button>
 
             <div class="notification-dropdown" *ngIf="isDropdownOpen">
@@ -43,12 +46,13 @@
               <ng-container *ngIf="notificacoes$ | async as notificacoes">
                 <ul class="notification-list">
                   <ng-container *ngIf="notificacoes.length > 0; else noNotifications">
-                    <li *ngFor="let notificacao of notificacoes" (click)="handleNotificationClick(notificacao)" [class.unread]="!notificacao.lida">
+                    <li *ngFor="let notificacao of notificacoes" (click)="handleNotificationClick(notificacao)"
+                      [class.unread]="!notificacao.lida">
                       {{ notificacao.mensagem }}
                     </li>
                   </ng-container>
                   <ng-template #noNotifications>
-                    <li>Nenhuma notificação nova.</li>
+                    <li class="notification-empty">Nenhuma notificação nova.</li>
                   </ng-template>
                 </ul>
               </ng-container>
@@ -85,6 +89,5 @@
         </button>
       </ng-template>
     </div>
-
   </div>
 </nav>

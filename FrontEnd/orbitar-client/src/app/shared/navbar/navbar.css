@@ -1,9 +1,9 @@
 :host {
   display: block;
-  width: 100%;
-  position: sticky; /* Faz a navbar ficar fixa no topo */
+  position: sticky;
   top: 0;
-  z-index: 1000; /* Garante que a navbar fique acima de outros conteúdos */
+  z-index: 1000;
+  width: 100%;
 }
 
 .navbar {
@@ -31,6 +31,7 @@
   color: #111827;
   text-decoration: none;
 }
+
 .navbar-brand .logo-icon {
   display: flex;
   align-items: center;
@@ -46,36 +47,39 @@
   align-items: center;
   gap: 1.5rem;
 }
+
 .navbar-links,
 .logged-out-links {
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
+
 .navbar-links a,
 .logged-out-links a {
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* Aumentado o gap para ícone e texto */
+  gap: 0.5rem;
   color: #4b5563;
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem;
-  border-bottom: 2px solid transparent;
-  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
   border-radius: 6px;
-  font-size: 0.9rem; /* Leve ajuste de tamanho */
+  font-size: 0.9rem;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 }
+
 .navbar-links a:hover,
 .logged-out-links a:hover {
   color: #2563eb;
   background-color: #f0f5ff;
 }
+
 .navbar-links a.active,
 .logged-out-links a.active {
   color: #2563eb;
   background-color: #eef4ff;
-  font-weight: 600; /* Destaca o link ativo */
+  font-weight: 600;
 }
 
 .navbar-user {
@@ -85,6 +89,7 @@
   border-left: 1px solid #e5e7eb;
   padding-left: 1.5rem;
 }
+
 .user-info {
   display: flex;
   align-items: center;
@@ -94,6 +99,7 @@
   font-weight: 500;
   transition: color 0.2s;
 }
+
 .user-info:hover {
   color: #111827;
 }
@@ -112,6 +118,7 @@
   border-radius: 6px;
   transition: background-color 0.2s;
 }
+
 .logout-button:hover {
   background-color: #f3f4f6;
 }
@@ -128,15 +135,16 @@
   font-size: 0.875rem;
   text-decoration: none;
 }
+
 .btn-login-nav:hover {
   background-color: #1d4ed8;
 }
 
 .notification-wrapper {
-  position: relative;
+  position: relative; /* Necessário para o dropdown se posicionar corretamente */
 }
+
 .notification-button {
-  position: relative;
   background: none;
   border: none;
   cursor: pointer;
@@ -148,14 +156,16 @@
   justify-content: center;
   transition: background-color 0.2s;
 }
+
 .notification-button:hover {
   background-color: #f3f4f6;
 }
+
 .notification-badge {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #ef4444; /* Vermelho */
+  background-color: #ef4444;
   color: white;
   border-radius: 50%;
   width: 18px;
@@ -167,4 +177,81 @@
   justify-content: center;
   border: 2px solid white;
   transform: translate(25%, -25%);
+}
+
+.notification-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 320px;
+  z-index: 1050;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.dropdown-header {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.notification-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.notification-list li {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #f3f4f6;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.notification-list li:hover {
+  background-color: #f9fafb;
+}
+
+.notification-list li:last-child {
+  border-bottom: none;
+}
+
+.notification-list li.unread {
+  background-color: #eff6ff;
+  font-weight: 500;
+}
+
+.notification-empty {
+  color: #6b7280;
+  cursor: default !important;
+  text-align: center;
+  padding: 1rem;
+}
+
+.dropdown-footer {
+  padding: 0.5rem;
+  text-align: center;
+  border-top: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+}
+
+.dropdown-footer a {
+  font-weight: 500;
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 0.875rem;
+  display: block;
+  padding: 0.25rem;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.dropdown-footer a:hover {
+  background-color: #e5e7eb;
 }
